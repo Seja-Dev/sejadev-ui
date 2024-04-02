@@ -4,11 +4,11 @@ import PropTypes from 'prop-types'
 /**
  * Primary UI component for user interaction
  */
-export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+export const Button = ({ primary, size, label, ...props }) => {
   return (
-    <button className='bg-red-300'>
-      Opa
+    <button
+      className="btn btn-primary uppercase text-white">
+      {label}
     </button>
   );
 };
