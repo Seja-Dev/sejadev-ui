@@ -1,8 +1,8 @@
 /** @type { import('@storybook/nextjs').StorybookConfig } */
 const config = {
   stories: [
-    "../components/**/*.mdx",
-    "../components/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+    "../src/components/**/*.mdx",
+    "../src/components/**/*.stories.@(js|jsx|mjs|ts|tsx)",
   ],
   addons: [
     "@storybook/addon-onboarding",
@@ -10,7 +10,7 @@ const config = {
     "@storybook/addon-essentials",
     "@chromatic-com/storybook",
     "@storybook/addon-interactions",
-    "@storybook/addon-styling-webpack"
+    "@storybook/addon-styling-webpack",
   ],
   framework: {
     name: "@storybook/nextjs",
