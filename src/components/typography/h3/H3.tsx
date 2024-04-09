@@ -1,14 +1,13 @@
 import { ReactNode } from 'react'
 
-/**
- * Primary H3 component for subtitles
- */
-
 interface IH3 {
   children: ReactNode
   className?: string
+  skeleton?: boolean
 }
 
-export function H3({ children, className }: IH3) {
+export function H3({ children, className, skeleton }: IH3) {
+  if (skeleton) return <div className={`skeleton ${className}`} />
+
   return <h3 className={`font-bold text-2xl ${className}`}>{children}</h3>
 }

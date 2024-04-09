@@ -1,14 +1,13 @@
 import { ReactNode } from 'react'
 
-/**
- * Primary H4 component for subtitles
- */
-
 interface IH4 {
   children: ReactNode
   className?: string
+  skeleton?: boolean
 }
 
-export function H4({ children, className }: IH4) {
+export function H4({ children, className, skeleton }: IH4) {
+  if (skeleton) return <div className={`skeleton ${className}`} />
+
   return <h4 className={`font-bold text-xl ${className}`}>{children}</h4>
 }

@@ -15,9 +15,9 @@ export const Basic: Story = {
   }
 }
 
-export const Primary: Story = {
+export const Skeleton: Story = {
   args: {
-    children: 'Primary title',
-    className: 'text-primary'
+    skeleton: true,
+    className: 'h-12 w-1/6 rounded-full'
   }
 }
