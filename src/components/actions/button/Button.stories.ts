@@ -10,6 +10,11 @@ const meta: Meta<typeof Button> = {
       control: {
         type: 'select'
       }
+    },
+    sizes: {
+      control: {
+        type: 'select'
+      }
     }
   }
 }
@@ -43,17 +48,3 @@ export const Loading: Story = {
     className: 'h-12 w-1/6 rounded-lg'
   }
 }
-
-export const Sizes: Story = {
-  args: {
-    label: 'Próxima aula'
-  },
-  argTypes: {
-    sizes: {
-      control: {
-        type: 'select'
-      }
-    }
-  }
-}
-
