@@ -1,36 +1,43 @@
 interface IButton {
-  label: string
-  fullWidth?: boolean
-  onClick?: () => void
-  loading?: boolean
-  className?: string
   skeleton?: boolean
-  disabled?: boolean
+  fullWidth?: boolean
+  className?: string
+  loading?: boolean
   sizes?: 'btn-xs' | 'btn-sm' | 'btn-md' | 'btn-lg'
+  disabled?: boolean
+  label?: string
+  onClick?: () => void
+  variant?:
+    | 'btn-primary'
+    | 'btn-secondary'
+    | 'btn-accent'
+    | 'btn-neutral'
+    | 'btn-ghost'
+    | 'btn-link'
+    | 'btn-success'
+    | 'btn-error'
 }
 
 export const Button: React.FC<IButton & React.HTMLProps<HTMLButtonElement>> = ({
+  skeleton,
+  fullWidth,
+  className,
+  loading,
+  sizes,
+  disabled,
   label,
   onClick,
-  loading,
-  className,
-  fullWidth,
-  disabled,
-  skeleton,
-  sizes
+  variant = 'btn-primary'
 }: IButton) => {
-
-  if (skeleton) {
-    return <div className={`skeleton ${fullWidth && 'w-full'} ${className}`} />
-  }
+  if (skeleton) return <div className={`skeleton ${fullWidth && 'w-full'} ${className}`} />
 
   return (
     <button
-      className={`btn btn-primary ${fullWidth && 'w-full'} ${loading && 'loading'} uppercase ${className} ${sizes}`}
+      className={`btn ${variant} ${fullWidth && 'w-full'} uppercase ${className} ${sizes}`}
       type="button"
       disabled={disabled || loading}
       onClick={onClick}>
-      {label}
+      {loading ? <span className="loading loading-spinner"></span> : label}
     </button>
   )
 }

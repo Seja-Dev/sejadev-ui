@@ -5,14 +5,19 @@ import { Button } from './Button'
 const meta: Meta<typeof Button> = {
   component: Button,
   argTypes: {
-    onClick: { action: 'clicked' }
+    onClick: { action: 'clicked' },
+    variant: {
+      control: {
+        type: 'select'
+      }
+    }
   }
 }
 export default meta
 
 type Story = StoryObj<typeof Button>
 
-export const Primary: Story = {
+export const Variant: Story = {
   args: {
     label: 'Button'
   }
@@ -27,35 +32,28 @@ export const Disabled: Story = {
 
 export const Skeleton: Story = {
   args: {
-    skeleton: true
+    skeleton: true,
+    className: 'h-12 w-1/6 rounded-lg'
   }
 }
 
 export const Loading: Story = {
   args: {
     loading: true,
-    label: 'Loading'
+    className: 'h-12 w-1/6 rounded-lg'
   }
 }
 
 export const Sizes: Story = {
+  args: {
+    label: 'Próxima aula'
+  },
   argTypes: {
     sizes: {
       control: {
-        type: 'select',
-        options: ['btn-xs', 'btn-sm', 'btn-md', 'btn-lg']
+        type: 'select'
       }
     }
   }
 }
 
-// export const Primary = Template.bind({})
-// Primary.args = {
-//   label: 'Button'
-// }
-
-// export const Disabled = Template.bind({})
-// Disabled.args = {
-//   disabled: true,
-//   label: 'Disabled'
-// }
