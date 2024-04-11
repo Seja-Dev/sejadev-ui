@@ -43,7 +43,7 @@ module.exports = {
           'base-100': '#18181b',
           info: '#3ABFF8',
           success: '#36D399',
-          error: '#F87272'
+          error: '#F87272',
         }
       }
     ],
