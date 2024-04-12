@@ -36,6 +36,7 @@ export function Input({
   className,
   ...props
 }: IInput) {
+  
   if (skeleton) return <div className={`skeleton ${fullWidth && 'w-full'} ${className}`} />
 
   return (
