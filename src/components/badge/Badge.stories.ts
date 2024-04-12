@@ -56,6 +56,6 @@ export const Ghost: Story = {
 export const Skeleton: Story = {
   args: {
     skeleton: true,
-    sekeletonClassName: 'w-24 h-8'
+    skeletonClassName: 'w-24 h-8'
   }
 }
