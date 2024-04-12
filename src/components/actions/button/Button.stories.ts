@@ -38,13 +38,13 @@ export const Disabled: Story = {
 export const Skeleton: Story = {
   args: {
     skeleton: true,
-    className: 'h-12 w-1/6 rounded-lg'
+    className: 'h-12 w-28 rounded-lg'
   }
 }
 
 export const Loading: Story = {
   args: {
     loading: true,
-    className: 'h-12 w-1/6 rounded-lg'
+    className: 'h-12 w-28 rounded-lg'
   }
 }

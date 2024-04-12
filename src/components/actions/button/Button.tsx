@@ -18,7 +18,7 @@ interface IButton {
     | 'btn-error'
 }
 
-export const Button: React.FC<IButton & React.HTMLProps<HTMLButtonElement>> = ({
+export function Button({
   skeleton,
   fullWidth,
   className,
@@ -28,7 +28,7 @@ export const Button: React.FC<IButton & React.HTMLProps<HTMLButtonElement>> = ({
   label,
   onClick,
   variant = 'btn-primary'
-}: IButton) => {
+}: IButton & React.HTMLProps<HTMLButtonElement>) {
   if (skeleton) return <div className={`skeleton ${fullWidth && 'w-full'} ${className}`} />
 
   return (
