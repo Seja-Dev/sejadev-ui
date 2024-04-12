@@ -43,11 +43,11 @@ export function Input({
       <StyledInput
         disabled={disabled}
         type={type}
-        className={`peer border-2 rounded-md placeholder-transparent disabled:opacity-40 ${className}
+        className={`peer border-2 rounded-md placeholder-transparent disabled:opacity-40 outline-none ${className}
         ${
           error
-            ? 'border-error outline-none'
-            : 'border-neutral focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary'
+            ? 'border-error'
+            : 'border-neutral focus:border-primary focus:ring-1 focus:ring-primary'
         } bg-base-100 px-5 pt-5 pb-2 
         ${fullWidth && 'w-full'} `}
         name={name}
