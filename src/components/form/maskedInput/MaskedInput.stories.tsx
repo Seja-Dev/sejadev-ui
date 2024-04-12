@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { IMask } from 'react-imask'
 
-import MaskedInput from './MaskedInput'
+import { MaskedInput } from './MaskedInput'
 
 const meta: Meta<typeof MaskedInput> = {
   component: MaskedInput
@@ -47,7 +47,7 @@ export const MaskedDate: Story = {
       Y: {
         mask: IMask.MaskedRange,
         from: 1900,
-        to: 29999,
+        to: 29999
       }
     },
     placeholder: 'Data de Expiração'
@@ -57,6 +57,6 @@ export const MaskedDate: Story = {
 export const Skeleton: Story = {
   args: {
     skeleton: true,
-    className: 'w-1/6 h-12 rounded-md'
+    className: 'h-12 rounded-md'
   }
 }

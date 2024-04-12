@@ -1,6 +1,6 @@
 import React, { InputHTMLAttributes } from 'react'
 
-interface IInput extends React.InputHTMLAttributes<HTMLInputElement> {
+interface IInput {
   name?: string
   skeleton?: boolean
   label?: string
@@ -18,11 +18,11 @@ interface IStyledInput extends InputHTMLAttributes<HTMLInputElement> {
   error?: boolean
 }
 
-const StyledInput: React.FC<IStyledInput> = ({ error, ...props }) => {
+const StyledInput = ({ error, ...props }: IStyledInput) => {
   return <input {...props} />
 }
 
-export const Input: React.FC<IInput> = ({
+export function Input({
   name,
   skeleton,
   fullWidth,
@@ -35,8 +35,9 @@ export const Input: React.FC<IInput> = ({
   disabled,
   className,
   ...props
-}) => {
+}: IInput) {
   if (skeleton) return <div className={`skeleton ${fullWidth && 'w-full'} ${className}`} />
+
   return (
     <div className="relative flex flex-col">
       <StyledInput

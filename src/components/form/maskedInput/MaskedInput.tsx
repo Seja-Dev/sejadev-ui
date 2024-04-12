@@ -18,7 +18,7 @@ interface MaskedInputProps {
   disabled?: boolean
 }
 
-const MaskedInput: React.FC<MaskedInputProps> = ({
+export function MaskedInput({
   placeholder,
   skeleton,
   name,
@@ -32,7 +32,7 @@ const MaskedInput: React.FC<MaskedInputProps> = ({
   className,
   mask = '',
   ...props
-}) => {
+}: MaskedInputProps) {
   if (skeleton) return <div className={`skeleton ${fullWidth && 'w-full'} ${className}`} />
 
   return (
@@ -66,4 +66,4 @@ const MaskedInput: React.FC<MaskedInputProps> = ({
   )
 }
 
-export default MaskedInput
+
