@@ -12,8 +12,8 @@ export function Avatar({ text = '', src, className, skeleton }: IAvatar) {
 
   return (
     <div
-      className={`${className} flex items-center justify-center rounded-full bg-primary cursor-pointer`}>
-      {src && <img src={src} alt="Avatar" className={`${className} object-cover rounded-full`} />}
+      style={{ backgroundImage: `url(${src})` }}
+      className={`${className} bg-cover bg-center rounded-full flex items-center justify-center bg-primary cursor-pointer`}>
       {!src && name}
     </div>
   )

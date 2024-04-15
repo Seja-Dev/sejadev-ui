@@ -9,17 +9,17 @@ export default meta
 
 type Story = StoryObj<typeof Avatar>
 
-export const Basic: Story = {
+export const WithImage: Story = {
   args: {
-    text: 'Aluno Teste',
-    className: 'w-10 h-10 text-xl text-white'
+    src: 'https://cdn-icons-png.flaticon.com/512/3135/3135768.png',
+    className: 'w-10 h-10'
   }
 }
 
-export const Image: Story = {
+export const WithoutImage: Story = {
   args: {
-    src: 'https://tm.ibxk.com.br/2017/06/22/22100428046161.jpg',
-    className: 'w-10 h-10'
+    text: 'Aluno Teste',
+    className: 'w-10 h-10 text-xl text-white'
   }
 }
 
