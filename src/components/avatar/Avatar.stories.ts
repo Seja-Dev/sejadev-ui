@@ -11,7 +11,7 @@ type Story = StoryObj<typeof Avatar>
 
 export const Basic: Story = {
   args: {
-    text: 'Nalbert de Jesus Madeira',
+    text: 'Aluno Teste',
     className: 'w-10 h-10 text-xl text-white'
   }
 }
