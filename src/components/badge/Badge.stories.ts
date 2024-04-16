@@ -6,11 +6,11 @@ const meta: Meta<typeof Badge> = {
   component: Badge,
   argTypes: {
     sizes: {
-      options: ['badge-xs', 'badge-sm', 'badge-md', 'badge-lg'],
+      options: ['xs', 'sm', 'md', 'lg'],
       control: { type: 'radio' }
     },
     variant: {
-      options: ['badge-primary', 'badge-secondary', 'badge-accent', 'badge-neutral', 'badge-ghost'],
+      options: ['primary', 'secondary', 'accent', 'neutral', 'ghost'],
       control: { type: 'select' }
     }
   }
