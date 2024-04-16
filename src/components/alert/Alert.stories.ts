@@ -8,7 +8,7 @@ const meta: Meta<typeof Alert> = {
     selectAlert: {
       control: {
         type: 'select',
-        options: ['alert-info', 'alert-warning', 'alert-error', 'alert-success']
+        options: ['info', 'warning', 'error', 'success']
       }
     }
   }
