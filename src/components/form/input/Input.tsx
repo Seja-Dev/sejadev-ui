@@ -1,4 +1,4 @@
-import React, { InputHTMLAttributes } from 'react'
+import React from 'react'
 
 interface IInput {
   name?: string
@@ -12,14 +12,6 @@ interface IInput {
   type?: string
   className?: string
   disabled?: boolean
-}
-
-interface IStyledInput extends InputHTMLAttributes<HTMLInputElement> {
-  error?: boolean
-}
-
-const StyledInput = ({ error, ...props }: IStyledInput) => {
-  return <input {...props} />
 }
 
 export function Input({
@@ -41,7 +33,7 @@ export function Input({
 
   return (
     <div className="relative flex flex-col">
-      <StyledInput
+      <input
         disabled={disabled}
         type={type}
         className={`peer border-2 rounded-md placeholder-transparent disabled:opacity-40 outline-none ${className}
@@ -53,7 +45,6 @@ export function Input({
         ${fullWidth && 'w-full'} `}
         name={name}
         value={value}
-        error={error}
         placeholder=""
         {...props}
       />
