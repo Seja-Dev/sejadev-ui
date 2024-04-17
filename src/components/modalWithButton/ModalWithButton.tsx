@@ -19,7 +19,9 @@ export function ModalWithButton({
 }: IModalWithButton) {
   const [isOpen, setIsOpen] = useState(false)
 
-  if (skeleton) return <div className={`skeleton ${skeleton} ${className}`}></div>
+  if (skeleton) return (
+    <div className={`skeleton ${skeleton} ${className}`}></div>
+  )
 
   return (
     <>

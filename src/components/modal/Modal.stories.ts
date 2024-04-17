@@ -12,7 +12,14 @@ type Story = StoryObj<typeof Modal>
 export const Basic: Story = {
   args: {
     isOpen: true,
-    onClose: () => {return}
+    onClose: () => {
+      return
+    }
   }
 }
 
+export const Skeleton: Story = {
+  args: {
+    skeleton: true
+  }
+}
