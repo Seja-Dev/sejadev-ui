@@ -13,8 +13,7 @@ export const Basic: Story = {
   args: {
     title: 'Módulo 1 - O Início',
     subtitle: '3 aulas',
-    children: 'Configuração do Ambiente'
-
+    children: 'Configuração do Ambiente',
   }
 }
 
@@ -29,5 +28,12 @@ export const Transparent: Story = {
   args: {
     title: 'Transparent accordion',
     transparent: true
-  },
+  }
+}
+
+export const Skeleton: Story = {
+  args: {
+    skeleton: true,
+    className: 'h-16 rounded-md'
+  }
 }

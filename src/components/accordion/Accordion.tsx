@@ -7,6 +7,8 @@ interface IAccordion {
   disabled?: boolean
   children?: ReactNode
   transparent?: boolean
+  skeleton?: boolean
+  className?: string
 }
 
 export function Accordion({
@@ -15,12 +17,16 @@ export function Accordion({
   subtitle,
   disabled,
   children,
-  transparent
+  transparent,
+  skeleton,
+  className
 }: IAccordion) {
   const [open, setOpen] = useState(disabled ? false : firstState)
 
+  if(skeleton) return <div className={`skeleton ${className}`}></div>
+
   return (
-    <div className={`${transparent ? 'bg-transparent' : 'bg-[#141316]'} p-4 rounded-lg`}>
+    <div className={`${transparent ? 'bg-transparent' : 'bg-[#141316]'} p-4 rounded-lg ${className}`}>
       <div
         onClick={() => !disabled && setOpen(!open)}
         className="flex justify-between items-center w-full cursor-pointer">
