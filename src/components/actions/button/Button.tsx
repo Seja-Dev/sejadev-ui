@@ -3,19 +3,11 @@ interface IButton {
   fullWidth?: boolean
   className?: string
   loading?: boolean
-  sizes?: 'btn-xs' | 'btn-sm' | 'btn-md' | 'btn-lg'
   disabled?: boolean
   label?: string
   onClick?: () => void
-  variant?:
-    | 'btn-primary'
-    | 'btn-secondary'
-    | 'btn-accent'
-    | 'btn-neutral'
-    | 'btn-ghost'
-    | 'btn-link'
-    | 'btn-success'
-    | 'btn-error'
+  btnSize?: 'xs' | 'sm' | 'md' | 'lg'
+  variant?: 'primary' | 'secondary' | 'accent' | 'neutral' | 'ghost' | 'link' | 'success' | 'error'
 }
 
 export function Button({
@@ -23,17 +15,35 @@ export function Button({
   fullWidth,
   className,
   loading,
-  sizes,
+  btnSize = 'md',
   disabled,
   label,
   onClick,
-  variant = 'btn-primary'
+  variant = 'primary'
 }: IButton & React.HTMLProps<HTMLButtonElement>) {
   if (skeleton) return <div className={`skeleton ${fullWidth && 'w-full'} ${className}`} />
 
+  const btnVariant = {
+    primary: 'btn-primary text-white',
+    secondary: 'btn-secondary text-white',
+    accent: 'btn-accent text-white',
+    neutral: 'btn-neutral text-white',
+    ghost: 'btn-white text-primary',
+    link: 'text-primary',
+    success: 'btn-success text-white',
+    error: 'btn-error text-white'
+  }
+
+  const btnSizeVariant = {
+    xs: 'btn-xs',
+    sm: 'btn-sm',
+    md: 'btn-md',
+    lg: 'btn-lg'
+  }
+
   return (
     <button
-      className={`btn ${variant} ${fullWidth && 'w-full'} uppercase ${className} ${sizes}`}
+      className={`btn ${btnVariant[variant]} ${fullWidth && 'w-full'} uppercase ${className} ${btnSizeVariant[btnSize]}`}
       type="button"
       disabled={disabled || loading}
       onClick={onClick}>
