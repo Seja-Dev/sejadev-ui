@@ -6,15 +6,21 @@ interface BadgeProps {
   children?: React.ReactNode
 }
 
-export function Badge({ size="sm", variant = 'primary', children, className, skeleton }: BadgeProps) {
+export function Badge({
+  size = 'md',
+  variant = 'primary',
+  children,
+  className,
+  skeleton
+}: BadgeProps) {
   if (skeleton) return <div className={`skeleton ${className}`}></div>
 
   const colorVariants = {
-    primary: 'bg-primary text-white',
-    secondary: 'bg-secondary text-white',
-    accent: 'bg-accent text-white',
-    neutral: 'bg-neutral text-white',
-    ghost: 'bg-transparent text-neutral-500'
+    primary: 'badge-primary',
+    secondary: 'badge-secondary',
+    accent: 'badge-accent',
+    neutral: 'badge-neutral',
+    ghost: 'badge-ghost'
   }
 
   const sizeVariants = {
@@ -24,5 +30,9 @@ export function Badge({ size="sm", variant = 'primary', children, className, ske
     lg: 'badge-lg'
   }
 
-  return <div className={`badge ${sizeVariants[size]} ${colorVariants[variant]} ${className}`}>{children}</div>
+  return (
+    <div className={`badge ${sizeVariants[size]} ${colorVariants[variant]} ${className}`}>
+      {children}
+    </div>
+  )
 }

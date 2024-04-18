@@ -40,10 +40,10 @@ export function CourseCard ({
     }}>
       <div className={`card-body bg-neutral-900 rounded-2xl p-6`}>
         <h2 className="card-title">{title}</h2>
-        <h4><span className='font-bold'>Nível:</span><Badge className='badge badge-primary ml-1'>{LEVEL_DICT[level] || 'Indefinido'}</Badge></h4>
+        <h4><span className='font-bold'>Nível:</span><Badge variant='neutral' className='ml-1'>{LEVEL_DICT[level] || 'Indefinido'}</Badge></h4>
         <p className='my-2'>{description}</p>
         <div className='flex flex-wrap gap-1 items-start'>
-          {tags?.map((str, i) => <span className='badge badge-neutral' key={`${i}-${str}`}>{str}</span>)}
+          {tags?.map((str, i) => <Badge variant='neutral' key={`${i}-${str}`}>{str}</Badge>)}
         </div>
       </div>
     </div>
