@@ -24,6 +24,14 @@ export const Basic: Story = {
   }
 }
 
+export const SelectAlert: Story = {
+  args: {
+    selectAlert: 'success',
+    children: 'X',
+    text: 'This is an alert'
+  }
+}
+
 export const Skeleton: Story = {
   args: {
     skeleton: true,
