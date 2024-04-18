@@ -6,22 +6,9 @@ export interface IModal {
   isOpen: boolean
   onClose: () => void
   children: ReactNode
-  skeleton?: boolean
 }
 
-export function Modal({ isOpen, onClose, children, skeleton }: IModal) {
-  if (skeleton)
-    return (
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-[700px] mx-auto p-0 flex flex-col gap-4">
-        <div className="w-full flex justify-between">
-          <div className="skeleton h-6 w-52 rounded-md"></div>
-          <div className="skeleton h-4 w-4 rounded-none"></div>
-        </div>
-        <div className="skeleton h-12 w-full rounded-md"></div>
-        <div className="skeleton h-12 w-full rounded-md"></div>
-        <div className="skeleton h-12 w-full rounded-lg"></div>
-      </div>
-    )
+export function Modal({ isOpen, onClose, children }: IModal) {
 
   return (
     <>
