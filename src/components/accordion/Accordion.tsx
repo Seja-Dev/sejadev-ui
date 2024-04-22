@@ -61,7 +61,7 @@ export function Accordion({
       </div>
       <div
         className={`grid overflow-hidden transition-all duration-300 ease-in-out ${
-          open ? 'grid-rows-[1fr] opacity-100 py-4' : 'grid-rows-[0fr] opacity-0'
+          open ? 'grid-rows-[1fr] opacity-100 p-1' : 'grid-rows-[0fr] opacity-0'
         }`}>
         <div className={`overflow-hidden ${transparent ? 'bg-transparent' : 'bg-[#141316]'}`}>
           {children}
