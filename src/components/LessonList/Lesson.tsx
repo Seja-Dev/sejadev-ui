@@ -1,11 +1,4 @@
-type Lesson = {
-  id: string
-  name: string
-  answers: string
-  isChallenge: boolean
-  chapterId: string
-  description: string
-}
+import { Lesson } from '../../types'
 
 export interface ILessonStyle {
   status: 'default' | 'completed' | 'active' | 'pending' | 'error'
@@ -66,7 +59,7 @@ interface ILesson {
   onCheckClick: (id: string) => void
 }
 
-export function Lesson({
+export function LessonList({
   lessons,
   module,
   activeLessonId = '',
