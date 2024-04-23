@@ -24,6 +24,9 @@
     "@storybook/react": "^8.0.5",
     "@storybook/test": "^8.0.5",
     "@types/react": "^18.2.74",
+    "@types/video.js": "^7.3.30",
+    "@types/videojs-contrib-quality-levels": "^2.0.1",
+    "@types/videojs-hls-quality-selector": "^1.1.0",
     "@typescript-eslint/parser": "^6.21.0",
     "autoprefixer": "^10.4.19",
     "eslint": "^8.57.0",
@@ -53,6 +56,11 @@
   "dependencies": {
     "daisyui": "^4.9.0",
     "next": "^14.1.4",
-    "react-icons": "^5.2.1"
+    "react-icons": "^5.2.1",
+    "video.js": "^7.21.4",
+    "videojs-contrib-hls": "^5.15.0",
+    "videojs-contrib-quality-levels": "^2.1.0",
+    "videojs-hls-quality-selector": "^1.1.4",
+    "videojs-hotkeys": "^0.2.28"
   }
 }
