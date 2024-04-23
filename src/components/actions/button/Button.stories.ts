@@ -11,6 +11,14 @@ type Story = StoryObj<typeof Button>
 
 export const Basic: Story = {
   args: {
-    label: 'Basic button'
+    children: 'Button'
   }
 }
+
+export const Disabled: Story = {
+  args: {
+    disabled: true,
+    label: 'Disabled'
+  }
+}
+
