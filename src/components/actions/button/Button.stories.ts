@@ -106,3 +106,4 @@ export const Loading: Story = {
     className: 'w-32 h-12'
   }
 }
+
