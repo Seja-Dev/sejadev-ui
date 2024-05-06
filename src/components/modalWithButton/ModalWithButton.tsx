@@ -7,6 +7,7 @@ interface IModalWithButton {
   children: ReactNode
   clickComponent?: ReactNode
   skeleton?: boolean
+  skeletonClassName?: string
   className?: string
 }
 
@@ -15,19 +16,17 @@ export function ModalWithButton({
   children,
   clickComponent,
   skeleton,
+  skeletonClassName,
   className
 }: IModalWithButton) {
   const [isOpen, setIsOpen] = useState(false)
-
-  if (skeleton) return (
-    <div className={`skeleton ${skeleton} ${className}`}></div>
-  )
-
+  if (skeleton) return <div className={`skeleton w-32 h-12 rounded-lg ${skeletonClassName}`}></div>
+  
   return (
     <>
       {clickComponent && <div onClick={() => setIsOpen(true)}>{clickComponent}</div>}
       {!clickComponent && <Button onClick={() => setIsOpen(true)}>{buttonText}</Button>}
-      <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
+      <Modal isOpen={isOpen} onClose={() => setIsOpen(false)} className={className}>
         {children}
       </Modal>
     </>
