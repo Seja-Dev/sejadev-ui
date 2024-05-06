@@ -14,3 +14,11 @@ export const Basic: Story = {
     type: 'colored',
   }
 }
+
+
+export const Skeleton: Story = {
+  args: {
+    skeleton: true,
+  }
+}
+
