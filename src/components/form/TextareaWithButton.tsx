@@ -5,6 +5,9 @@ interface ITextAreaWithButtons extends ITextarea {
   onConfirm: (e: React.SyntheticEvent) => void
   confirmLabel?: string
   disabledButton?: boolean
+  skeleton?: boolean
+  skeletonClassName?: string
+  className?: string
 }
 
 export function TextareaWithButton({
@@ -12,10 +15,15 @@ export function TextareaWithButton({
   value,
   confirmLabel = 'Enviar',
   disabledButton,
+  skeleton,
+  skeletonClassName,
+  className,
   ...props
 }: ITextAreaWithButtons) {
+  if (skeleton) return <div className={`skeleton w-full h-36 rounded-md ${skeletonClassName}`}></div>
+
   return (
-    <Textarea value={value} {...props}>
+    <Textarea value={value} {...props} className={className}>
       <Button disabled={disabledButton || !Boolean(value)} type="submit">
         {confirmLabel}
       </Button>
