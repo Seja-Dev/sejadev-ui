@@ -12,7 +12,8 @@ type Story = StoryObj<typeof Input>
 export const Primary: Story = {
   args: {
     name: 'Nome',
-    label: 'Nome Completo'
+    label: 'Nome Completo',
+    skeletonClassName: 'w-96 h-12'
   }
 }
 

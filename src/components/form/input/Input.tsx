@@ -11,6 +11,7 @@ interface IInput {
   error?: boolean
   type?: string
   className?: string
+  skeletonClassName?: string
   disabled?: boolean
 }
 
@@ -26,10 +27,11 @@ export function Input({
   type,
   disabled,
   className,
+  skeletonClassName,
   ...props
 }: IInput) {
   
-  if (skeleton) return <div className={`skeleton ${fullWidth && 'w-full'} ${className}`} />
+  if (skeleton) return <div className={`skeleton w-full h-14 rounded-md ${skeletonClassName}`} />
 
   return (
     <div className="relative flex flex-col">
