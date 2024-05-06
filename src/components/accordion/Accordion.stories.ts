@@ -14,26 +14,30 @@ export const Basic: Story = {
     title: 'Módulo 1 - O Início',
     subtitle: '3 aulas',
     children: 'Configuração do Ambiente',
-  }
+    skeletonClassName: 'h-[4.5rem] w-full rounded-md'
+  },
 }
 
 export const Disabled: Story = {
   args: {
     title: 'Disabled accordion',
-    disabled: true
+    disabled: true,
+    skeletonClassName: 'h-16 w-full rounded-md'
   }
 }
 
 export const Transparent: Story = {
   args: {
     title: 'Transparent accordion',
-    transparent: true
+    transparent: true,
+    children: 'Configuração do Ambiente',
+    skeletonClassName: 'h-[4.5rem] w-full rounded-md'
   }
 }
 
 export const Skeleton: Story = {
   args: {
     skeleton: true,
-    className: 'h-16 rounded-md'
+    skeletonClassName: 'h-[4.5rem] w-full rounded-md'
   }
 }

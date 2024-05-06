@@ -9,6 +9,7 @@ interface IAccordion {
   transparent?: boolean
   skeleton?: boolean
   className?: string
+  skeletonClassName: string
 }
 
 export function Accordion({
@@ -19,11 +20,12 @@ export function Accordion({
   children,
   transparent,
   skeleton,
+  skeletonClassName,
   className
 }: IAccordion) {
   const [open, setOpen] = useState(disabled ? false : firstState)
 
-  if(skeleton) return <div className={`skeleton ${className}`}></div>
+  if(skeleton) return <div className={`skeleton ${skeletonClassName}`}></div>
 
   return (
     <div className={`${transparent ? 'bg-transparent' : 'bg-[#141316]'} p-4 rounded-lg ${className}`}>
