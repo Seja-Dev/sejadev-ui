@@ -9,6 +9,7 @@ interface IAccordion {
   transparent?: boolean
   skeleton?: boolean
   className?: string
+  skeletonClassName?: string
 }
 
 export function Accordion({
@@ -19,11 +20,12 @@ export function Accordion({
   children,
   transparent,
   skeleton,
+  skeletonClassName,
   className
 }: IAccordion) {
   const [open, setOpen] = useState(disabled ? false : firstState)
 
-  if(skeleton) return <div className={`skeleton ${className}`}></div>
+  if(skeleton) return <div className={`skeleton w-full h-[4.5rem] rounded-md ${skeletonClassName}`}></div>
 
   return (
     <div className={`${transparent ? 'bg-transparent' : 'bg-[#141316]'} p-4 rounded-lg ${className}`}>
@@ -61,7 +63,7 @@ export function Accordion({
       </div>
       <div
         className={`grid overflow-hidden transition-all duration-300 ease-in-out ${
-          open ? 'grid-rows-[1fr] opacity-100 p-1' : 'grid-rows-[0fr] opacity-0'
+          open ? 'grid-rows-[1fr] opacity-100 py-4' : 'grid-rows-[0fr] opacity-0'
         }`}>
         <div className={`overflow-hidden ${transparent ? 'bg-transparent' : 'bg-[#141316]'}`}>
           {children}

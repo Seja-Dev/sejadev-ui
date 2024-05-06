@@ -8,6 +8,7 @@ interface IChapter {
   moduleId?: string
   activeLessonId?: string
   firstState: boolean
+  className?: string
   skeleton?: boolean
   skeletonClassName?: string
   onCheckClick: (id: string) => void
@@ -80,7 +81,7 @@ const chapters: Chapters[] = [
   }
 ]
 
-export function Chapter({ module, activeLessonId, firstState, onCheckClick, skeleton, skeletonClassName }: IChapter) {
+export function Chapter({ module, activeLessonId, firstState, onCheckClick, className, skeleton, skeletonClassName }: IChapter) {
   if (skeleton) return <div className={`skeleton w-full h-16 rounded-md ${skeletonClassName}`}></div>
 
   const handleClickLesson = (id: string) => {
@@ -95,7 +96,9 @@ export function Chapter({ module, activeLessonId, firstState, onCheckClick, skel
           title={chapter.title}
           subtitle={`${chapter.lessons.length} Aulas`}
           firstState={firstState}
-          transparent={false}>
+          transparent={false}
+          className={className}
+          >
           <LessonList
             lessons={chapter.lessons}
             module={module}
