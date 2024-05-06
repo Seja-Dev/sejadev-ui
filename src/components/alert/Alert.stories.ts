@@ -35,6 +35,6 @@ export const SelectAlert: Story = {
 export const Skeleton: Story = {
   args: {
     skeleton: true,
-    className: 'h-14'
+    skeletonClassName: 'h-14'
   }
 }
