@@ -8,6 +8,7 @@ interface ICourseCard {
   level: number
   tags?: string[]
   skeleton?: boolean
+  skeletonClassName?: string
   className?: string
 }
 
@@ -30,12 +31,13 @@ export function CourseCard ({
   level,
   tags,
   skeleton,
+  skeletonClassName,
   className
 }: ICourseCard){
-  if(skeleton) return <div className={`${className} skeleton`}></div>
+  if(skeleton) return <div className={`skeleton md:w-96 h-32 ${skeletonClassName}`}></div>
 
   return (
-    <div className="card w-fit md:w-96 shadow-xl cursor-pointer hover:shadow-primary-all" onClick={() => {
+    <div className={`card w-fit md:w-96 shadow-xl cursor-pointer hover:shadow-primary-all ${className}`} onClick={() => {
       Router.push(url)
     }}>
       <div className={`card-body bg-neutral-900 rounded-2xl p-6`}>
