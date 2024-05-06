@@ -25,7 +25,7 @@ export function Accordion({
 }: IAccordion) {
   const [open, setOpen] = useState(disabled ? false : firstState)
 
-  if(skeleton) return <div className={`skeleton ${skeletonClassName}`}></div>
+  if(skeleton) return <div className={`skeleton w-full h-[4.5rem] rounded-md ${skeletonClassName}`}></div>
 
   return (
     <div className={`${transparent ? 'bg-transparent' : 'bg-[#141316]'} p-4 rounded-lg ${className}`}>
