@@ -11,6 +11,7 @@ export interface IDropdown {
   label?: string
   value?: string
   className?: string
+  skeletonClassName?: string
 }
 
 export function Dropdown({
@@ -20,15 +21,16 @@ export function Dropdown({
   skeleton,
   label,
   value,
-  className
+  className,
+  skeletonClassName
 }: IDropdown) {
-  if(skeleton) return <div className={`skeleton ${className}`}></div>
+  if(skeleton) return <div className={`skeleton w-full h-12 rounded-md ${skeletonClassName}`}></div>
   
   return (
     <select
       onChange={onChange}
       value={value}
-      className={`${fullWidth && 'w-full'} ${className} p-3 text-base outline-none mb-3 cursor-pointer rounded-md bg-base-100`}>
+      className={`${fullWidth && 'w-full'} ${className} p-3 text-base outline-none mb-3 cursor-pointer rounded-md bg-[#242424]`}>
       {label && <option>{label}</option>}
       {options.map(({ text, value }, key) => (
         <option key={`dropdown-option-${key}`} value={value}>

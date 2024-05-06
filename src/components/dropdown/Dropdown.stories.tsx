@@ -31,6 +31,6 @@ export const Basic: Story = {
 export const Skeleton: Story = {
   args: {
     skeleton: true,
-    className: 'h-12 rounded-md'
+    skeletonClassName: 'h-12 rounded-md'
   }
 }
