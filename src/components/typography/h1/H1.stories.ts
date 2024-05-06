@@ -11,7 +11,8 @@ type Story = StoryObj<typeof H1>
 
 export const Basic: Story = {
   args: {
-    children: 'Basic title'
+    children: 'Basic title',
+    skeletonClassName: 'h-12 w-full rounded-full'
   }
 }
 
