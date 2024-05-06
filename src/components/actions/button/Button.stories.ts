@@ -24,7 +24,8 @@ type Story = StoryObj<typeof Button>
 
 export const Variant: Story = {
   args: {
-    label: 'Button'
+    label: 'Button',
+    skeletonClassName: 'h-12 w-24 rounded-lg',
   }
 }
 

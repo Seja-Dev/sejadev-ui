@@ -2,6 +2,7 @@ interface IButton {
   skeleton?: boolean
   fullWidth?: boolean
   className?: string
+  skeletonClassName?: string
   loading?: boolean
   disabled?: boolean
   label?: string
@@ -14,6 +15,7 @@ export function Button({
   skeleton,
   fullWidth,
   className,
+  skeletonClassName,
   loading,
   btnSize = 'md',
   disabled,
@@ -21,7 +23,7 @@ export function Button({
   onClick,
   variant = 'primary'
 }: IButton & React.HTMLProps<HTMLButtonElement>) {
-  if (skeleton) return <div className={`skeleton ${fullWidth && 'w-full'} ${className}`} />
+  if (skeleton) return <div className={`skeleton h-12 w-28 rounded-md ${fullWidth && 'w-full'} ${skeletonClassName}`} />
 
   const btnVariant = {
     primary: 'btn-primary text-white',
