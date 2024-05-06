@@ -57,7 +57,7 @@
     "daisyui": "^4.9.0",
     "next": "^14.1.4",
     "react-icons": "^5.2.1",
-    "video.js": "^7.21.4",
+    "video.js": "^7.21.5",
     "videojs-contrib-hls": "^5.15.0",
     "videojs-contrib-quality-levels": "^2.1.0",
     "videojs-hls-quality-selector": "^1.1.4",
