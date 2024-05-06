@@ -19,6 +19,6 @@ export const Basic: Story = {
 export const Skeleton: Story = {
   args: {
     skeleton: true,
-    className: 'w-[300px] h-24 rounded-xl'
+    skeletonClassName: 'w-[300px] h-32'
   }
 }
