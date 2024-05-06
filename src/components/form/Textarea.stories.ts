@@ -13,6 +13,7 @@ export const Basic: Story = {
   args: {
     name: 'Name',
     label: 'Resposta',
+    skeletonClassName: 'h-24'
   }
 }
 
@@ -28,6 +29,6 @@ export const Skeleton: Story = {
   args: {
     skeleton: true,
     fullWidth: true,
-    className: 'h-16 rounded-md'
+    skeletonClassName: 'h-24'
   }
 }
