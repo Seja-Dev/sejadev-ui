@@ -9,12 +9,13 @@ export interface ITextarea {
   onChange?: (
     e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>
   ) => void
-  error?: string
+  error?: boolean
   type?: string
   disabled?: boolean
   rows?: HTMLTextAreaElement['rows']
   maxLength?: number
   className?: string
+  skeletonClassName?: string
   skeleton?: boolean
   children?: ReactNode
 }
@@ -31,15 +32,17 @@ export function Textarea({
   maxLength,
   className,
   skeleton,
+  skeletonClassName,
   onChange,
   ...props
 }: ITextarea) {
-  if (skeleton) return <div className={`skeleton ${className} ${fullWidth && 'w-full'}`}></div>
-  
+  if (skeleton)
+    return <div className={`skeleton w-full h-24 rounded-md ${skeletonClassName}`}></div>
+
   return (
     <div className="relative flex flex-col">
       <textarea
-        className={`${fullWidth && 'w-full'} ${className} resize-none border-2 peer border-base-100 rounded-md bg-base-100 pt-5 p-2 pl-5 text-base text-base-content outline-none ${error ? `focus:border-error focus:ring-1 focus:ring-error` : 'focus:border-primary focus:ring-1 focus:ring-primary'}`}
+        className={`${fullWidth && 'w-full'} resize-none border-2 peer border-[#242424] rounded-md bg-[#242424] pt-5 p-2 pl-5 text-base text-base-content outline-none ${error ? `border-error focus:ring-1 focus:ring-error` : 'focus:border-primary focus:ring-1 focus:ring-primary'} ${className}`}
         placeholder=""
         name={name}
         value={value}
