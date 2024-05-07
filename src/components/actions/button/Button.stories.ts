@@ -44,8 +44,15 @@ export const Skeleton: Story = {
 }
 
 export const Loading: Story = {
-  args: {
     loading: true,
     className: 'h-12 w-28 rounded-lg'
   }
 }
+
+export const Disabled: Story = {
+  args: {
+    disabled: true,
+    label: 'Disabled'
+  }
+}
+
