@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { LessonStyle } from './LessonList'
+import { LessonStyle } from './Lesson'
 
 const meta: Meta<typeof LessonStyle> = {
   component: LessonStyle
@@ -36,5 +36,6 @@ export const Active: Story = {
 export const Skeleton: Story = {
   args: {
     skeleton: true,
+    skeletonClassName: 'w-40'
   }
 }
