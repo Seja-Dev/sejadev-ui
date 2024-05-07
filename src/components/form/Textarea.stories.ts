@@ -21,7 +21,7 @@ export const Error: Story = {
   args: {
     name: 'Name',
     label: 'Label',
-    error: true,
+    error: 'Campo obrigatório',
   }
 }
 

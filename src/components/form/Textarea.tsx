@@ -9,7 +9,7 @@ export interface ITextarea {
   onChange?: (
     e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>
   ) => void
-  error?: boolean
+  error?: string
   type?: string
   disabled?: boolean
   rows?: HTMLTextAreaElement['rows']
@@ -65,6 +65,7 @@ export function Textarea({
         peer-placeholder-shown:top-4 peer-focus:top-1 peer-focus:text-xs text-[#898989]">
         {required ? `${label} *` : label}
       </label>
+      {error && <p className="text-error text-xs mt-1">{error}</p>}
     </div>
   )
 }
