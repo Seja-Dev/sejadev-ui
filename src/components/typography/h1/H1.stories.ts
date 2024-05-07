@@ -12,7 +12,7 @@ type Story = StoryObj<typeof H1>
 export const Basic: Story = {
   args: {
     children: 'Basic title',
-    skeletonClassName: 'h-12 w-full rounded-full'
+    skeletonClassName: 'h-8 w-28 rounded-full'
   }
 }
 
