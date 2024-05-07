@@ -23,7 +23,8 @@ export function Button({
   onClick,
   variant = 'primary'
 }: IButton & React.HTMLProps<HTMLButtonElement>) {
-  if (skeleton) return <div className={`skeleton h-12 w-28 rounded-md ${fullWidth && 'w-full'} ${skeletonClassName}`} />
+
+  if (skeleton) return <div className={`skeleton w-full h-12 rounded-md ${skeletonClassName}`} />
 
   const btnVariant = {
     primary: 'btn-primary text-white',
@@ -45,7 +46,7 @@ export function Button({
 
   return (
     <button
-      className={`btn ${btnVariant[variant]} ${fullWidth && 'w-full'} uppercase ${className} ${btnSizeVariant[btnSize]}`}
+      className={`btn ${fullWidth && 'w-full'} uppercase ${btnVariant[variant]} ${btnSizeVariant[btnSize]} ${className}`}
       type="button"
       disabled={disabled || loading}
       onClick={onClick}>

@@ -25,7 +25,7 @@ type Story = StoryObj<typeof Button>
 export const Variant: Story = {
   args: {
     label: 'Button',
-    skeletonClassName: 'h-12 w-24 rounded-lg',
+    skeletonClassName: 'w-32 h-12'
   }
 }
 
@@ -39,20 +39,15 @@ export const Disabled: Story = {
 export const Skeleton: Story = {
   args: {
     skeleton: true,
-    className: 'h-12 w-28 rounded-lg'
+    skeletonClassName: 'w-96 h-12'
   }
 }
 
 export const Loading: Story = {
-    loading: true,
-    className: 'h-12 w-28 rounded-lg'
-  }
-}
-
-export const Disabled: Story = {
   args: {
-    disabled: true,
+    loading: true,
     label: 'Disabled'
   }
 }
+
 
