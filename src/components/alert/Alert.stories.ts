@@ -32,6 +32,30 @@ export const SelectAlert: Story = {
   }
 }
 
+export const Warning: Story = {
+  args: {
+    selectAlert: 'warning',
+    children: 'X',
+    text: 'This is a Warning alert'
+  }
+}
+
+export const Error: Story = {
+  args: {
+    selectAlert: 'error',
+    children: 'X',
+    text: 'This is an Error alert'
+  }
+}
+
+export const Success: Story = {
+  args: {
+    selectAlert: 'success',
+    children: 'X',
+    text: 'This is a Success alert' 
+  }
+}
+
 export const Skeleton: Story = {
   args: {
     skeleton: true,
