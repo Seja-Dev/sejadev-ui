@@ -46,10 +46,13 @@
     "prettier-plugin-tailwindcss": "^0.5.13",
     "react": "^18.2.0",
     "storybook": "^8.0.5",
+    "storybook-dark-mode": "^4.0.1",
     "tailwindcss": "^3.4.3",
     "typescript": "^5.4.3"
   },
   "dependencies": {
-    "daisyui": "^4.9.0"
+    "daisyui": "^4.9.0",
+    "next": "^14.1.4",
+    "react-icons": "^5.2.1"
   }
 }

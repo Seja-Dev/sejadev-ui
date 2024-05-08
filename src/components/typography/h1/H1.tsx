@@ -1,14 +1,14 @@
 import { ReactNode } from 'react'
 
-/**
- * Primary H1 component for titles
- */
-
 interface IH1 {
   children: ReactNode
   className?: string
+  skeleton?: boolean
+  skeletonClassName?: string
 }
 
-export function H1({ children, className }: IH1) {
+export function H1({ children, className, skeleton, skeletonClassName }: IH1) {
+  if (skeleton) return <div className={`skeleton w-60 h-12 rounded-full ${skeletonClassName}`} />
+
   return <h1 className={`font-bold text-4xl ${className}`}>{children}</h1>
 }
