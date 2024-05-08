@@ -21,14 +21,7 @@ export const Disabled: Story = {
   args: {
     name: 'Name',
     label: 'Resposta',
-    disabledButton: true
-  }
-}
-
-export const WithButton: Story = {
-  args: {
-    name: 'Name',
-    label: 'Resposta',
-    confirmLabel: 'Enviar'
+    disabledButton: true,
+    className: 'h-36'
   }
 }

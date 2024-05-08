@@ -7,6 +7,7 @@ interface ITextAreaWithButtons extends ITextarea {
   disabledButton?: boolean
   skeleton?: boolean
   skeletonClassName?: string
+  fullWidth?: boolean
   className?: string
 }
 
@@ -17,10 +18,11 @@ export function TextareaWithButton({
   disabledButton,
   skeleton,
   skeletonClassName,
+  fullWidth,
   className,
   ...props
 }: ITextAreaWithButtons) {
-  if (skeleton) return <div className={`skeleton w-full h-36 rounded-md ${skeletonClassName}`}></div>
+  if (skeleton) return <div className={`skeleton ${fullWidth && 'w-full'} h-36 rounded-md ${skeletonClassName}`}></div>
 
   return (
     <Textarea value={value} {...props} className={className}>

@@ -17,7 +17,6 @@ export interface ITextarea {
   className?: string
   skeletonClassName?: string
   skeleton?: boolean
-  skeletonClassName?: string
   children?: ReactNode
 }
 
