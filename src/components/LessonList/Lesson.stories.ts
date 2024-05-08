@@ -33,6 +33,22 @@ export const Active: Story = {
   }
 }
 
+export const Pending: Story = {
+  args: {
+    status: 'pending',
+    name: 'Nome da aula',
+    number: 1
+  }
+}
+
+export const Error: Story = {
+  args: {
+    status: 'error',
+    name: 'Nome da aula',
+    number: 1
+  }
+}
+
 export const Skeleton: Story = {
   args: {
     skeleton: true,

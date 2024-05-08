@@ -28,21 +28,21 @@ export function Textarea({
   value,
   error,
   rows,
-  children,
   maxLength,
   className,
-  skeleton,
   skeletonClassName,
+  skeleton,
+  children,
   onChange,
   ...props
 }: ITextarea) {
   if (skeleton)
-    return <div className={`skeleton w-full h-24 rounded-md ${skeletonClassName}`}></div>
+    return <div className={`skeleton ${fullWidth && 'w-full'} h-24 rounded-md ${skeletonClassName}`}></div>
 
   return (
     <div className="relative flex flex-col">
       <textarea
-        className={`${fullWidth && 'w-full'} resize-none border-2 peer border-[#242424] rounded-md bg-[#242424] pt-5 p-2 pl-5 text-base text-base-content outline-none ${error ? `border-error focus:ring-1 focus:ring-error` : 'focus:border-primary focus:ring-1 focus:ring-primary'} ${className}`}
+        className={`${fullWidth && 'w-full'} resize-none border-2 peer border-input-background rounded-md bg-input-background pt-5 p-2 pl-5 text-base text-base-content outline-none ${error ? `border-error focus:ring-1 focus:ring-error` : 'focus:border-primary focus:ring-1 focus:ring-primary'} ${className}`}
         placeholder=""
         name={name}
         value={value}
@@ -62,7 +62,7 @@ export function Textarea({
       )}
       <label
         className="absolute top-1 left-5 text-xs transition-all pointer-events-none peer-placeholder-shown:text-base 
-        peer-placeholder-shown:top-4 peer-focus:top-1 peer-focus:text-xs text-[#898989]">
+        peer-placeholder-shown:top-4 peer-focus:top-1 peer-focus:text-xs text-common-grey20">
         {required ? `${label} *` : label}
       </label>
       {error && <p className="text-error text-xs mt-1">{error}</p>}

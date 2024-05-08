@@ -24,15 +24,15 @@ export function Button({
   variant = 'primary'
 }: IButton & React.HTMLProps<HTMLButtonElement>) {
 
-  if (skeleton) return <div className={`skeleton w-full h-12 rounded-md ${skeletonClassName}`} />
+  if (skeleton) return <div className={`skeleton ${fullWidth && 'w-full'} h-12 rounded-md ${skeletonClassName}`} />
 
   const btnVariant = {
     primary: 'btn-primary text-white',
     secondary: 'btn-secondary text-white',
     accent: 'btn-accent text-white',
     neutral: 'btn-neutral text-white',
-    ghost: 'btn-white text-primary',
-    link: 'text-primary',
+    ghost: 'btn-ghost text-primary',
+    link: 'btn-link text-primary',
     success: 'btn-success text-white',
     error: 'btn-error text-white'
   }

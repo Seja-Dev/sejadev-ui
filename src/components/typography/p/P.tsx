@@ -8,7 +8,7 @@ interface IP {
 }
 
 export function P({ children, className, skeleton, skeletonClassName }: IP) {
-  if (skeleton) return <div className={`skeleton w-40 h-[1.6rem] rounded-full ${skeletonClassName}`} />
+  if (skeleton) return <div className={`skeleton w-40 h-6 rounded-full ${skeletonClassName}`} />
 
   return <p className={`text-base ${className}`}>{children}</p>
 }

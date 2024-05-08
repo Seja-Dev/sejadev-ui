@@ -21,8 +21,35 @@ type Story = StoryObj<typeof Badge>
 
 export const Basic: Story = {
   args: {
-    children: 'Basic Badge',
+    children: 'Basic Badge'
+  }
+}
 
+export const Secondary: Story = {
+  args: {
+    variant: 'secondary',
+    children: 'Secondary Badge'
+  }
+}
+
+export const Accent: Story = {
+  args: {
+    variant: 'accent',
+    children: 'Accent Badge'
+  }
+}
+
+export const Neutral: Story = {
+  args: {
+    variant: 'neutral',
+    children: 'Neutral Badge'
+  }
+}
+
+export const Ghost: Story = {
+  args: {
+    variant: 'ghost',
+    children: 'Ghost Badge'
   }
 }
 
