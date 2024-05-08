@@ -22,10 +22,10 @@ export default meta
 
 type Story = StoryObj<typeof Button>
 
-export const Variant: Story = {
+export const Primary: Story = {
   args: {
     label: 'Button',
-    skeletonClassName: 'w-full h-12'
+    skeletonClassName: 'w-32 h-12'
   }
 }
 
