@@ -25,16 +25,16 @@ export const LessonStyle = ({
     return (
       <div className={`flex my-2 gap-4 items-center ${skeletonClassName}`}>
         <div className="skeleton p-4 w-7 h-7"></div>
-        <div className="skeleton h-7 min-w-40"></div>
+        <div className="skeleton h-7 w-full"></div>
       </div>
     )
 
   const colorDict = {
-    default: 'border-[#898989] text-[#898989] color-[#898989]',
-    completed: 'border-[#42FF00] text-[#42FF00] color-[#42FF00]',
+    default: 'border-common-gray20 text-common-gray20 color-common-gray20',
+    completed: 'border-validators-success text-validators-success color-validators-success',
     active: 'border-primary text-primary color-primary',
-    pending: 'border-[#FFD700] text-[#FFD700] color-[#FFD700]',
-    error: 'border-[#FF0000] text-[#FF0000] color-[#FF0000]'
+    pending: 'border-validators-warning text-validators-warning color-validators-warning',
+    error: 'border-validators-error text-validators-error color-validators-error'
   }
 
   return (

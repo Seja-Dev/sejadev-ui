@@ -11,6 +11,7 @@ interface IChapter {
   className?: string
   skeleton?: boolean
   skeletonClassName?: string
+  fullWidth?: boolean
   onCheckClick: (id: string) => void
 }
 
@@ -81,8 +82,8 @@ const chapters: Chapters[] = [
   }
 ]
 
-export function Chapter({ module, activeLessonId, firstState, onCheckClick, className, skeleton, skeletonClassName }: IChapter) {
-  if (skeleton) return <div className={`skeleton w-full h-16 rounded-md ${skeletonClassName}`}></div>
+export function Chapter({ module, activeLessonId, firstState, onCheckClick, className, skeleton, skeletonClassName, fullWidth }: IChapter) {
+  if (skeleton) return <div className={`skeleton ${fullWidth && 'w-full'} h-20 rounded-md ${skeletonClassName}`}></div>
 
   const handleClickLesson = (id: string) => {
     console.log(id)
