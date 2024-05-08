@@ -24,13 +24,13 @@ export function Dropdown({
   className,
   skeletonClassName
 }: IDropdown) {
-  if(skeleton) return <div className={`skeleton w-full h-12 rounded-md ${skeletonClassName}`}></div>
+  if(skeleton) return <div className={`skeleton ${fullWidth && 'w-full'} h-12 rounded-md ${skeletonClassName}`}></div>
   
   return (
     <select
       onChange={onChange}
       value={value}
-      className={`${fullWidth && 'w-full'} ${className} p-3 text-base outline-none mb-3 cursor-pointer rounded-md bg-[#242424]`}>
+      className={`${fullWidth && 'w-full'} p-3 text-base outline-none mb-3 cursor-pointer rounded-md bg-input-background ${className}`}>
       {label && <option>{label}</option>}
       {options.map(({ text, value }, key) => (
         <option key={`dropdown-option-${key}`} value={value}>

@@ -7,7 +7,28 @@ module.exports = {
       'primary-bottom': '0px 0px 27px #386EEC',
       'primary-all': '0px 0px 10px #386EEC'
     },
-    extend: {}
+    extend: {
+      colors: {
+        common: {
+          black: '#020202',
+          white: '#ffffff',
+          grey20: '#898989',
+          grey30: '#757575',
+          dark20: '#141316',
+          dark30: '#28262C',
+          dark40: '#232631',
+          dark50: '#333042'
+        },
+        validators: {
+          error: 'red',
+          success: '#42ff00',
+          warning: 'yellow'
+        },
+        input: {
+          background: '#242424'
+        }
+      }
+    }
   },
   plugins: [require('daisyui')],
   daisyui: {
