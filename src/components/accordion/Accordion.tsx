@@ -28,8 +28,6 @@ export function Accordion({
 }: IAccordion) {
   const [open, setOpen] = useState(disabled ? false : firstState)
 
-  if(skeleton) return <div className={`skeleton ${className}`}></div>
-
   if (skeleton)
     return (
       <div
