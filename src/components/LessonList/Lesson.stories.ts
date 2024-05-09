@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { LessonStyle } from './LessonList'
+import { LessonStyle } from './Lesson'
 
 const meta: Meta<typeof LessonStyle> = {
   component: LessonStyle
