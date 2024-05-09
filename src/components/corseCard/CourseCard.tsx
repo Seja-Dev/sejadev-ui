@@ -1,4 +1,3 @@
-import Router from 'next/router'
 import { Badge } from '../badge/Badge'
 
 interface ICourseCard {
@@ -10,10 +9,11 @@ interface ICourseCard {
   skeleton?: boolean
   skeletonClassName?: string
   className?: string
+  onClick?: () => void
 }
 
 interface levelType {
-  [key: number]: string;
+  [key: number]: string
 }
 
 const LEVEL_DICT: levelType = {
@@ -24,28 +24,37 @@ const LEVEL_DICT: levelType = {
   4: 'Expert'
 }
 
-export function CourseCard ({
+export function CourseCard({
   title,
   description,
-  url,
   level,
   tags,
   skeleton,
   skeletonClassName,
-  className
-}: ICourseCard){
-  if(skeleton) return <div className={`skeleton md:w-96 h-32 ${skeletonClassName}`}></div>
+  className,
+  onClick
+}: ICourseCard) {
+  if (skeleton) return <div className={`skeleton md:w-96 h-32 ${skeletonClassName}`}></div>
 
   return (
-    <div className={`card w-fit md:w-96 shadow-xl cursor-pointer hover:shadow-primary-all ${className}`} onClick={() => {
-      Router.push(url)
-    }}>
+    <div
+      className={`card w-fit md:w-96 shadow-xl cursor-pointer hover:shadow-primary-all ${className}`}
+      onClick={onClick}>
       <div className={`card-body bg-neutral-900 rounded-2xl p-6`}>
         <h2 className="card-title">{title}</h2>
-        <h4><span className='font-bold'>Nível:</span><Badge variant='neutral' className='ml-1'>{LEVEL_DICT[level] || 'Indefinido'}</Badge></h4>
-        <p className='my-2'>{description}</p>
-        <div className='flex flex-wrap gap-1 items-start'>
-          {tags?.map((str, i) => <Badge variant='neutral' key={`${i}-${str}`}>{str}</Badge>)}
+        <h4>
+          <span className="font-bold">Nível:</span>
+          <Badge variant="neutral" className="ml-1">
+            {LEVEL_DICT[level] || 'Indefinido'}
+          </Badge>
+        </h4>
+        <p className="my-2">{description}</p>
+        <div className="flex flex-wrap gap-1 items-start">
+          {tags?.map((str, i) => (
+            <Badge variant="neutral" key={`${i}-${str}`}>
+              {str}
+            </Badge>
+          ))}
         </div>
       </div>
     </div>
