@@ -1,3 +1,5 @@
+import { IoIosArrowDown } from 'react-icons/io'
+
 export interface DropdownOption {
   value: string
   text: string
@@ -24,19 +26,28 @@ export function Dropdown({
   className,
   skeletonClassName
 }: IDropdown) {
-  if(skeleton) return <div className={`skeleton ${fullWidth && 'w-full'} h-12 rounded-md ${skeletonClassName}`}></div>
-  
+  if (skeleton)
+    return (
+      <div
+        className={`skeleton ${fullWidth && 'w-full'} h-12 rounded-md ${skeletonClassName}`}></div>
+    )
+
   return (
-    <select
-      onChange={onChange}
-      value={value}
-      className={`${fullWidth && 'w-full'} p-3 text-base outline-none mb-3 cursor-pointer rounded-md bg-input-background ${className}`}>
-      {label && <option>{label}</option>}
-      {options.map(({ text, value }, key) => (
-        <option key={`dropdown-option-${key}`} value={value}>
-          {text}
-        </option>
-      ))}
-    </select>
+    <div className={`${fullWidth && 'w-full'} relative ${className}`}>
+      <select
+        onChange={onChange}
+        value={value}
+        className="w-full appearance-none p-3 text-base outline-none mb-3 cursor-pointer rounded-md bg-input-background flex items-center justify-center">
+        {label && <option>{label}</option>}
+        {options.map(({ text, value }, key) => (
+          <option key={`dropdown-option-${key}`} value={value}>
+            {text}
+          </option>
+        ))}
+      </select>
+      <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-inherit">
+        <IoIosArrowDown size={20} />
+      </div>
+    </div>
   )
 }
