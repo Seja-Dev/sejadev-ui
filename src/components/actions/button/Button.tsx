@@ -5,7 +5,6 @@ interface IButton {
   skeletonClassName?: string
   loading?: boolean
   disabled?: boolean
-  label?: string
   onClick?: () => void
   btnSize?: 'xs' | 'sm' | 'md' | 'lg'
   variant?: 'primary' | 'secondary' | 'accent' | 'neutral' | 'ghost' | 'link' | 'success' | 'error'
@@ -19,7 +18,7 @@ export function Button({
   loading,
   btnSize = 'md',
   disabled,
-  label,
+  children,
   onClick,
   variant = 'primary'
 }: IButton & React.HTMLProps<HTMLButtonElement>) {
@@ -50,7 +49,7 @@ export function Button({
       type="button"
       disabled={disabled || loading}
       onClick={onClick}>
-      {loading ? <span className="loading loading-spinner"></span> : label}
+      {loading ? <span className="loading loading-spinner"></span> : children}
     </button>
   )
 }

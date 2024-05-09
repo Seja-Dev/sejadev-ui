@@ -17,9 +17,3 @@ export const Basic: Story = {
     }
   }
 }
-
-export const Skeleton: Story = {
-  args: {
-    
-  }
-}
