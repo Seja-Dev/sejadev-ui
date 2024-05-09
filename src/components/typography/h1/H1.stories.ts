@@ -11,13 +11,14 @@ type Story = StoryObj<typeof H1>
 
 export const Basic: Story = {
   args: {
-    children: 'Basic title'
+    children: 'Basic title',
+    skeletonClassName: 'h-8 w-28 rounded-full'
   }
 }
 
-export const Primary: Story = {
+export const Skeleton: Story = {
   args: {
-    children: 'Primary title',
-    className: 'text-primary'
+    skeleton: true,
+    className: 'h-12 w-1/6 rounded-full'
   }
 }

@@ -3,7 +3,7 @@ interface BadgeProps {
   variant?: 'primary' | 'secondary' | 'accent' | 'neutral' | 'ghost'
   className?: string
   skeleton?: boolean
-  sekeletonClassName?: string
+  skeletonClassName?: string
   children?: React.ReactNode
 }
 
@@ -13,9 +13,9 @@ export function Badge({
   children,
   className,
   skeleton,
-  sekeletonClassName
+  skeletonClassName
 }: BadgeProps) {
-  if (skeleton) return <div className={`skeleton ${sekeletonClassName}`}></div>
+  if (skeleton) return <div className={`skeleton w-20 h-6 ${skeletonClassName}`}></div>
 
   const colorVariants = {
     primary: 'badge-primary',
