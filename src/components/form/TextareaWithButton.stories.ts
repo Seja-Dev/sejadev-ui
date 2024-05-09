@@ -11,15 +11,25 @@ type Story = StoryObj<typeof TextareaWithButton>
 
 export const Basic: Story = {
   args: {
-    name: 'Name',
+    name: 'Answer',
     label: 'Resposta',
-    rows: 5
+    confirmLabel: 'Enviar',
+    className: 'h-36'
+  }
+}
+
+export const Loading: Story = {
+  args: {
+    name: 'Answer',
+    label: 'Resposta',
+    loading: true,
+    className: 'h-36'
   }
 }
 
 export const Disabled: Story = {
   args: {
-    name: 'Name',
+    name: 'Answer',
     label: 'Resposta',
     disabledButton: true,
     className: 'h-36'

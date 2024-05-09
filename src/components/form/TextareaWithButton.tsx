@@ -3,6 +3,7 @@ import { Button } from '../actions/button/Button'
 
 interface ITextAreaWithButtons extends ITextarea {
   onConfirm: (e: React.SyntheticEvent) => void
+  loading?: boolean
   confirmLabel?: string
   disabledButton?: boolean
   skeleton?: boolean
@@ -13,6 +14,7 @@ interface ITextAreaWithButtons extends ITextarea {
 
 export function TextareaWithButton({
   onConfirm,
+  loading,
   value,
   confirmLabel = 'Enviar',
   disabledButton,
@@ -26,7 +28,7 @@ export function TextareaWithButton({
 
   return (
     <Textarea value={value} {...props} className={className}>
-      <Button disabled={disabledButton || !Boolean(value)} type="submit">
+      <Button disabled={disabledButton || !Boolean(value)} loading={loading} type="submit">
         {confirmLabel}
       </Button>
     </Textarea>
