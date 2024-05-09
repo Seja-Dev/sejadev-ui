@@ -5,7 +5,7 @@ import { Badge } from './Badge'
 const meta: Meta<typeof Badge> = {
   component: Badge,
   argTypes: {
-    sizes: {
+    size: {
       options: ['xs', 'sm', 'md', 'lg'],
       control: { type: 'radio' }
     },
@@ -25,9 +25,37 @@ export const Basic: Story = {
   }
 }
 
+export const Secondary: Story = {
+  args: {
+    variant: 'secondary',
+    children: 'Secondary Badge'
+  }
+}
+
+export const Accent: Story = {
+  args: {
+    variant: 'accent',
+    children: 'Accent Badge'
+  }
+}
+
+export const Neutral: Story = {
+  args: {
+    variant: 'neutral',
+    children: 'Neutral Badge'
+  }
+}
+
+export const Ghost: Story = {
+  args: {
+    variant: 'ghost',
+    children: 'Ghost Badge'
+  }
+}
+
 export const Skeleton: Story = {
   args: {
     skeleton: true,
-    className: 'w-20 h-6'
+    sekeletonClassName: 'w-24 h-8'
   }
 }

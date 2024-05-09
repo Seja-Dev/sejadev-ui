@@ -1,4 +1,5 @@
 import { useState, ReactNode } from 'react'
+import { RiArrowDropDownLine } from 'react-icons/ri'
 
 interface IAccordion {
   firstState?: boolean
@@ -9,7 +10,8 @@ interface IAccordion {
   transparent?: boolean
   skeleton?: boolean
   className?: string
-  skeletonClassName?: string
+  skeletonClassName: string
+  fullWidth?: boolean
 }
 
 export function Accordion({
@@ -21,14 +23,20 @@ export function Accordion({
   transparent,
   skeleton,
   skeletonClassName,
-  className
+  className,
+  fullWidth
 }: IAccordion) {
   const [open, setOpen] = useState(disabled ? false : firstState)
 
-  if(skeleton) return <div className={`skeleton w-full h-[4.5rem] rounded-md ${skeletonClassName}`}></div>
+  if (skeleton)
+    return (
+      <div
+        className={`skeleton ${fullWidth && 'w-full'} h-24 rounded-md ${skeletonClassName}`}></div>
+    )
 
   return (
-    <div className={`${transparent ? 'bg-transparent' : 'bg-[#141316]'} p-4 rounded-lg ${className}`}>
+    <div
+      className={`${disabled ? 'bg-common-dark40' : transparent ? 'bg-transparent' : 'bg-common-dark20'} p-4 rounded-lg ${className}`}>
       <div
         onClick={() => !disabled && setOpen(!open)}
         className="flex justify-between items-center w-full cursor-pointer">
@@ -36,36 +44,15 @@ export function Accordion({
           <h4 className="font-bold">{title}</h4>
           {subtitle && <p className="text-sm">{subtitle}</p>}
         </div>
-        <svg
-          className="fill-white shrink-0 ml-8"
-          width="16"
-          height="16"
-          xmlns="http://www.w3.org/2000/svg">
-          <rect
-            y="7"
-            width="16"
-            height="2"
-            rx="1"
-            className={`transform origin-center transition duration-200 ease-out ${
-              open && '!rotate-180'
-            }`}
-          />
-          <rect
-            y="7"
-            width="16"
-            height="2"
-            rx="1"
-            className={`transform origin-center rotate-90 transition duration-200 ease-out ${
-              open && '!rotate-180'
-            }`}
-          />
-        </svg>
+        <div className={`transition-transform transform ${open ? 'rotate-180' : 'rotate-0'}`}>
+          <RiArrowDropDownLine size={35} />
+        </div>
       </div>
       <div
         className={`grid overflow-hidden transition-all duration-300 ease-in-out ${
           open ? 'grid-rows-[1fr] opacity-100 py-4' : 'grid-rows-[0fr] opacity-0'
         }`}>
-        <div className={`overflow-hidden ${transparent ? 'bg-transparent' : 'bg-[#141316]'}`}>
+        <div className={`overflow-hidden ${transparent ? 'bg-transparent' : 'bg-common-dark20'}`}>
           {children}
         </div>
       </div>

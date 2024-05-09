@@ -15,13 +15,6 @@ export const Basic: Story = {
   }
 }
 
-export const Primary: Story = {
-  args: {
-    children: 'Primary paragraph',
-    className: 'text-primary'
-  }
-}
-
 export const Bold: Story = {
   args: {
     children: 'bold paragraph',
@@ -29,10 +22,9 @@ export const Bold: Story = {
   }
 }
 
-export const WithSpan: Story = {
-  render: () => (
-    <P>
-      Text <span className="font-bold">With</span> span
-    </P>
-  )
+export const Skeleton: Story = {
+  args: {
+    skeleton: true,
+    className: 'h-5 w-44 rounded-full'
+  }
 }
