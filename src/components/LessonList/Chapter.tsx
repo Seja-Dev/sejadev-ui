@@ -6,7 +6,6 @@ interface IChapter {
   lessons: Lesson[]
   chapters: Chapters[]
   module: string
-  moduleId?: string
   activeLessonId?: string
   firstState: boolean
   className?: string

@@ -73,7 +73,17 @@ export function LessonList({
       {lessons.map(({ name, id, answers, isChallenge }, key) => (
         <LessonStyle
           key={`lesson-${module}-${key}`}
-          status={id === activeLessonId ? 'active' : answers ? 'completed' : 'default'}
+          status={
+            id === activeLessonId 
+              ? 'active' 
+              : answers.every(answer => answer.status === 'APROVED') 
+                ? 'completed' 
+                : answers.some(answer => answer.status === 'PENDING') 
+                  ? 'pending' 
+                  : answers.some(answer => answer.status === 'CHANGES_REQUESTED') 
+                    ? 'error'
+                    : 'default'
+          }
           name={isChallenge ? `[DESAFIO] ${name}` : name}
           number={key + 1}
           onLessonClick={() => onLessonClick(id)}
