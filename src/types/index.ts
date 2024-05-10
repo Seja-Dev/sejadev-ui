@@ -1,7 +1,7 @@
 export type Lesson = {
   id: string
   name: string
-  answers: string
+  answers: Answer[]
   isChallenge: boolean
   chapterId: string
   description: string
@@ -13,4 +13,9 @@ export type Chapters = {
   firstState: boolean
   transparent: boolean
   lessons: Lesson[]
+}
+
+type Answer = {
+  id: string
+  status: string
 }
