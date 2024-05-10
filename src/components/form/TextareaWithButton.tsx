@@ -24,13 +24,19 @@ export function TextareaWithButton({
   className,
   ...props
 }: ITextAreaWithButtons) {
-  if (skeleton) return <div className={`skeleton ${fullWidth && 'w-full'} h-36 rounded-md ${skeletonClassName}`}></div>
+  if (skeleton)
+    return (
+      <div
+        className={`skeleton ${fullWidth && 'w-full'} h-36 rounded-md ${skeletonClassName}`}></div>
+    )
 
   return (
-    <Textarea value={value} {...props} className={className}>
-      <Button disabled={disabledButton || !Boolean(value)} loading={loading} type="submit">
-        {confirmLabel}
-      </Button>
-    </Textarea>
+    <form onSubmit={onConfirm}>
+      <Textarea value={value} {...props} className={className}>
+        <Button disabled={disabledButton || !Boolean(value)} loading={loading} type="submit">
+          {confirmLabel}
+        </Button>
+      </Textarea>
+    </form>
   )
 }
