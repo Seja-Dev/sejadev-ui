@@ -7,14 +7,21 @@ interface IAlert {
   selectAlert: 'info' | 'warning' | 'error' | 'success'
 }
 
-export function Alert({ children, skeleton, className, skeletonClassName, text, selectAlert = 'info' }: IAlert) {
+export function Alert({
+  children,
+  skeleton,
+  className,
+  skeletonClassName,
+  text,
+  selectAlert = 'info'
+}: IAlert) {
   if (skeleton) return <div className={`skeleton alert h-16 ${skeletonClassName}`}></div>
 
   const alertVariants = {
-    info: 'alert-info text-white ',
-    warning: 'alert-warning text-white',
-    error: 'alert-error text-white',
-    success: 'alert-success text-white'
+    info: 'alert-info',
+    warning: 'alert-warning',
+    error: 'alert-error',
+    success: 'alert-success'
   }
 
   return (

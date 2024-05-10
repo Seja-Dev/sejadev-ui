@@ -17,16 +17,8 @@ export default meta
 
 type Story = StoryObj<typeof Alert>
 
-export const Basic: Story = {
+export const Info: Story = {
   args: {
-    children: 'X',
-    text: 'This is an alert'
-  }
-}
-
-export const SelectAlert: Story = {
-  args: {
-    selectAlert: 'success',
     children: 'X',
     text: 'This is an alert'
   }
@@ -52,7 +44,7 @@ export const Success: Story = {
   args: {
     selectAlert: 'success',
     children: 'X',
-    text: 'This is a Success alert' 
+    text: 'This is a Success alert'
   }
 }
 
