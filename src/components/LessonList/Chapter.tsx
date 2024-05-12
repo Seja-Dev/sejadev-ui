@@ -6,7 +6,6 @@ interface IChapter {
   lessons: Lesson[]
   chapters: Chapters[]
   module: string
-  activeLessonId?: string
   firstState: boolean
   className?: string
   skeleton?: boolean
@@ -16,7 +15,7 @@ interface IChapter {
   handleClickLesson: (id: string) => void
 }
 
-export function Chapter({ module, chapters, activeLessonId, firstState, className, skeleton, skeletonClassName, fullWidth, onCheckClick, handleClickLesson }: IChapter) {
+export function Chapter({ module, chapters, firstState, className, skeleton, skeletonClassName, fullWidth, onCheckClick, handleClickLesson }: IChapter) {
   if (skeleton) return <div className={`skeleton ${fullWidth && 'w-full'} h-20 rounded-md ${skeletonClassName}`}></div>
 
   return (
@@ -33,7 +32,6 @@ export function Chapter({ module, chapters, activeLessonId, firstState, classNam
           <LessonList
             lessons={chapter.lessons}
             module={module}
-            activeLessonId={activeLessonId}
             onLessonClick={handleClickLesson}
             onCheckClick={onCheckClick}
           />

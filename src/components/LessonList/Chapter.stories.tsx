@@ -12,7 +12,6 @@ type Story = StoryObj<typeof Chapter>
 export const Basic: Story = {
   args: {
     module: 'Módulo 1',
-    activeLessonId: '5',
     firstState: true,
     onCheckClick: () => {},
     handleClickLesson: () => {},
@@ -26,12 +25,8 @@ export const Basic: Story = {
           {
             id: '1',
             name: 'Aula 1 - Passando props no React',
-            answers: [
-              {
-                id: '1',
-                status: 'APROVED'
-              }
-            ],
+            status: 'completed',
+            answers: '',
             isChallenge: false,
             chapterId: '',
             description: 'Lorem Ipsum'
@@ -39,12 +34,8 @@ export const Basic: Story = {
           {
             id: '2',
             name: 'Aula 2 - Utilizando useState no React',
-            answers: [
-              {
-                id: '2',
-                status: 'PENDING'
-              }
-            ],
+            status: 'completed',
+            answers: '',
             isChallenge: true,
             chapterId: '',
             description: 'Lorem Ipsum'
@@ -52,12 +43,8 @@ export const Basic: Story = {
           {
             id: '3',
             name: 'Aula 3 - Utilizando useEffect no React',
-            answers: [
-              {
-                id: '3',
-                status: 'APROVED'
-              }
-            ],
+            status: 'completed',
+            answers: '',
             isChallenge: false,
             chapterId: '',
             description: 'Lorem Ipsum'
@@ -65,12 +52,8 @@ export const Basic: Story = {
           {
             id: '4',
             name: 'Aula 4 - Utilizando useEffect no React',
-            answers: [
-              {
-                id: '4',
-                status: 'CHANGES_REQUESTED'
-              }
-            ],
+            status: 'pending',
+            answers: '',
             isChallenge: true,
             chapterId: '',
             description: 'Lorem Ipsum'
@@ -86,20 +69,26 @@ export const Basic: Story = {
           {
             id: '5',
             name: 'Aula 2 - Teste',
-            answers: [],
-            isChallenge: false,
+            status: 'error',
+            answers: '',
+            isChallenge: true,
             chapterId: '',
             description: 'Lorem Ipsum dolor sit amet'
           },
           {
             id: '6',
             name: 'Aula 3 - Teste',
-            answers: [
-              {
-                id: '6',
-                status: 'OTHER_STATUS'
-              }
-            ],
+            status: 'active',
+            answers: '',
+            isChallenge: false,
+            chapterId: '',
+            description: 'Consectetur adipiscing elit'
+          },
+          {
+            id: '7',
+            name: 'Aula 4 - Teste',
+            status: 'default',
+            answers: '',
             isChallenge: false,
             chapterId: '',
             description: 'Consectetur adipiscing elit'
