@@ -1,4 +1,5 @@
 import React from 'react'
+import InputMask from 'react-input-mask'
 
 interface IInput {
   name?: string
@@ -6,6 +7,7 @@ interface IInput {
   label?: string
   fullWidth?: boolean
   required?: boolean
+  mask: string
   value?: string
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
   error?: boolean
@@ -20,6 +22,7 @@ export function Input({
   skeleton,
   fullWidth,
   required,
+  mask,
   label,
   value,
   onChange,
@@ -34,7 +37,8 @@ export function Input({
 
   return (
     <div className="relative flex flex-col">
-      <input
+      <InputMask
+        mask={mask}
         disabled={disabled}
         type={type}
         className={`peer border-2 rounded-md placeholder-transparent disabled:opacity-40 outline-none ${className}

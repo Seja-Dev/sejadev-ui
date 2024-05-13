@@ -31,3 +31,19 @@ export const Skeleton: Story = {
     className: 'w-1/6 h-12 rounded-md'
   }
 }
+
+export const InputMaskDate: Story = {
+  args: {
+    name: 'Data',
+    label: 'Data de Expiração',
+    mask: '99/99/9999',
+  }
+}
+
+export const InputMaskTel: Story = {
+  args: {
+    name: 'Telefone',
+    label: 'Telefone',
+    mask: '(99) 99999-9999',
+  }
+}
