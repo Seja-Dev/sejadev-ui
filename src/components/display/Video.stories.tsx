@@ -11,6 +11,6 @@ type Story = StoryObj<typeof VideoJs>
 
 export const Basic: Story = {
   args: {
-    id: 'clvcrr8ve0004yclkx3piul2c'
+    url: 'https://d29tqkkuy46up6.cloudfront.net/clvcrr8ve0004yclkx3piul2c/main.m3u8',
   }
 }
