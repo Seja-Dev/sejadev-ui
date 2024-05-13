@@ -10,7 +10,7 @@ interface IAccordion {
   transparent?: boolean
   skeleton?: boolean
   className?: string
-  skeletonClassName: string
+  skeletonClassName?: string
   fullWidth?: boolean
 }
 

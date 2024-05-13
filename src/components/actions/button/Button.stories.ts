@@ -24,14 +24,14 @@ type Story = StoryObj<typeof Button>
 
 export const Primary: Story = {
   args: {
-    label: 'Button',
+    children: 'Button',
     skeletonClassName: 'w-32 h-12'
   }
 }
 
 export const Secondary: Story = {
   args: {
-    label: 'Button',
+    children: 'Button',
     variant: 'secondary',
     skeletonClassName: 'w-32 h-12'
   }
@@ -39,7 +39,7 @@ export const Secondary: Story = {
 
 export const Accent: Story = {
   args: {
-    label: 'Button',
+    children: 'Button',
     variant: 'accent',
     skeletonClassName: 'w-32 h-12'
   }
@@ -47,7 +47,7 @@ export const Accent: Story = {
 
 export const Neutral: Story = {
   args: {
-    label: 'Button',
+    children: 'Button',
     variant: 'neutral',
     skeletonClassName: 'w-32 h-12'
   }
@@ -55,7 +55,7 @@ export const Neutral: Story = {
 
 export const Ghost: Story = {
   args: {
-    label: 'Button',
+    children: 'Button',
     variant: 'ghost',
     skeletonClassName: 'w-32 h-12'
   }
@@ -63,7 +63,7 @@ export const Ghost: Story = {
 
 export const Link: Story = {
   args: {
-    label: 'Button',
+    children: 'Button',
     variant: 'link',
     skeletonClassName: 'w-32 h-12'
   }
@@ -71,7 +71,7 @@ export const Link: Story = {
 
 export const Success: Story = {
   args: {
-    label: 'Button',
+    children: 'Button',
     variant: 'success',
     skeletonClassName: 'w-32 h-12'
   }
@@ -79,7 +79,7 @@ export const Success: Story = {
 
 export const Error: Story = {
   args: {
-    label: 'Button',
+    children: 'Button',
     variant: 'error',
     skeletonClassName: 'w-32 h-12'
   }
@@ -88,7 +88,7 @@ export const Error: Story = {
 export const Disabled: Story = {
   args: {
     disabled: true,
-    label: 'Disabled'
+    children: 'Disabled'
   }
 }
 
@@ -102,7 +102,7 @@ export const Skeleton: Story = {
 export const Loading: Story = {
   args: {
     loading: true,
-    label: 'Disabled',
+    children: 'Disabled',
     className: 'w-32 h-12'
   }
 }

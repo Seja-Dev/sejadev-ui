@@ -56,7 +56,6 @@ export const LessonStyle = ({
 interface ILesson {
   lessons: Lesson[]
   module?: string
-  activeLessonId?: string
   onLessonClick: (id: string) => void
   onCheckClick: (id: string) => void
 }
@@ -64,16 +63,15 @@ interface ILesson {
 export function LessonList({
   lessons,
   module,
-  activeLessonId = '',
   onLessonClick,
   onCheckClick
 }: ILesson) {
   return (
     <div>
-      {lessons.map(({ name, id, answers, isChallenge }, key) => (
+      {lessons.map(({ name, id,  status, isChallenge }, key) => (
         <LessonStyle
           key={`lesson-${module}-${key}`}
-          status={id === activeLessonId ? 'active' : answers ? 'completed' : 'default'}
+          status={status}
           name={isChallenge ? `[DESAFIO] ${name}` : name}
           number={key + 1}
           onLessonClick={() => onLessonClick(id)}
