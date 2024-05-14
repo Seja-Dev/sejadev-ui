@@ -11,6 +11,6 @@ type Story = StoryObj<typeof VideoJs>
 
 export const Basic: Story = {
   args: {
-    url: 'https://d29tqkkuy46up6.cloudfront.net/clvcrr8ve0004yclkx3piul2c/main.m3u8',
+    url: 'https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8',
   }
 }
