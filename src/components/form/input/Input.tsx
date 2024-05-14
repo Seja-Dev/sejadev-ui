@@ -25,7 +25,6 @@ export function Input({
   mask,
   label,
   value,
-  onChange,
   error,
   type,
   disabled,
