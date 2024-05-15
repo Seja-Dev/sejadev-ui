@@ -1,4 +1,4 @@
-import { Badge } from '../badge/Badge'
+import { Badge } from '../../display/badge/Badge'
 
 interface ICourseCard {
   title: string

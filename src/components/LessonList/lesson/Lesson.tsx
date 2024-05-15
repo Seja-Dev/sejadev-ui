@@ -1,4 +1,5 @@
-import { Lesson } from '../../types'
+import { Lesson } from "../../../types"
+
 
 export interface ILessonStyle {
   status: 'default' | 'completed' | 'active' | 'pending' | 'error'
