@@ -1,6 +1,6 @@
-import { Accordion } from '../accordion/Accordion'
-import { LessonList } from './Lesson'
-import { Lesson, Chapters } from '../../types'
+import { Accordion } from '../../display/accordion/Accordion'
+import { LessonList } from '../lesson/Lesson'
+import { Lesson, Chapters } from '../../../types'
 
 interface IChapter {
   lessons: Lesson[]

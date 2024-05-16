@@ -1,5 +1,5 @@
-import { ITextarea, Textarea } from './Textarea'
-import { Button } from '../actions/button/Button'
+import { ITextarea, Textarea } from '../textarea/Textarea'
+import { Button } from '../../actions/button/Button'
 
 interface ITextAreaWithButtons extends ITextarea {
   onConfirm: (e: React.SyntheticEvent) => void

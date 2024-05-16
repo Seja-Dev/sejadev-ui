@@ -9,7 +9,7 @@ import 'videojs-contrib-quality-levels'
 import 'videojs-hls-quality-selector'
 import 'videojs-hotkeys'
 
-interface VideoJsProps {
+interface PlayerProps {
   url: string
   onReady?: (player: videojs.Player) => void
   responsive?: boolean
@@ -18,7 +18,7 @@ interface VideoJsProps {
   poster?: string
 }
 
-export const VideoJs: React.FC<VideoJsProps> = memo(
+export const Player: React.FC<PlayerProps> = memo(
   ({
     onReady,
     url,
@@ -86,4 +86,4 @@ export const VideoJs: React.FC<VideoJsProps> = memo(
   }
 )
 
-VideoJs.displayName = 'VideoJs'
+Player.displayName = 'Player'

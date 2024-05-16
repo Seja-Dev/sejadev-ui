@@ -1,6 +1,6 @@
 import { useState, ReactNode } from 'react'
 import { Modal } from '../modal/Modal'
-import { Button } from '../actions/button/Button'
+import { Button } from '../button/Button'
 
 interface IModalWithButton {
   buttonText?: string | ReactNode
