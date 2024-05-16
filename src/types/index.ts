@@ -1,7 +1,7 @@
 export type Lesson = {
   id: string
   name: string
-  status:  "default" | "completed" | "active" | "pending" | "error"
+  status: 'default' | 'completed' | 'active' | 'pending' | 'error'
   isChallenge: boolean
   description: string
 }

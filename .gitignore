@@ -2,3 +2,5 @@ node_modules
 .next
 .vscode
 storybook-static
+.rollup.cache
+dist
