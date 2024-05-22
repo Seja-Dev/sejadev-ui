@@ -1,3 +1,4 @@
+import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import typescript from '@rollup/plugin-typescript'
@@ -22,6 +23,7 @@ export default [
       }
     ],
     plugins: [
+      peerDepsExternal(),
       postcss({
         extensions: ['.css', '.module.css'],
         plugins: [tailwindcss(tailwindConfig)]
@@ -29,7 +31,8 @@ export default [
       resolve(),
       commonjs(),
       typescript({ tsconfig: './tsconfig.json', outDir: 'dist' })
-    ]
+    ],
+    external: ['react', 'react-dom']
   },
   {
     input: 'dist/esm/index.d.ts',
