@@ -1,6 +1,6 @@
 {
   "name": "sejadev-ui",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "SejaDev UI components",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -61,7 +61,6 @@
     "postcss": "^8.4.38",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.13",
-    "react": "^18.2.0",
     "rollup": "^4.17.2",
     "rollup-plugin-dts": "^6.1.0",
     "rollup-plugin-import-css": "^3.5.0",
@@ -84,5 +83,8 @@
     "videojs-contrib-quality-levels": "^2.1.0",
     "videojs-hls-quality-selector": "^1.1.4",
     "videojs-hotkeys": "^0.2.28"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
   }
 }
