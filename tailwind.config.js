@@ -50,7 +50,6 @@ module.exports = {
     base: true,
     utils: true,
     logs: true,
-    rtl: false,
-    prefix: ''
+    rtl: false
   }
 }

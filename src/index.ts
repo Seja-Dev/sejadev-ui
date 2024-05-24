@@ -1,5 +1,3 @@
-import './styles/globals.css'
-
 //ACTIONS
 export * from './components/actions/button/Button'
 export * from './components/actions/dropdown/Dropdown'
@@ -15,7 +13,6 @@ export * from './components/display/accordion/Accordion'
 export * from './components/display/avatar/Avatar'
 export * from './components/display/badge/Badge'
 export * from './components/display/logo/Logo'
-export * from './components/display/player/Player'
 
 //FEEDBACK
 export * from './components/feedback/alert/Alert'
