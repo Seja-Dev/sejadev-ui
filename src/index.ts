@@ -1,5 +1,3 @@
-import './styles/globals.css'
-
 //ACTIONS
 export * from './components/actions/button/Button'
 export * from './components/actions/dropdown/Dropdown'
