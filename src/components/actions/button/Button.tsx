@@ -47,10 +47,9 @@ export function Button({
   return (
     <button
       className={`btn ${fullWidth && 'w-full'} uppercase ${btnVariant[variant]} ${btnSizeVariant[btnSize]} ${className}`}
-      type="button"
       disabled={disabled || loading}
       onClick={onClick}>
-      {loading ? <span className="loading loading-spinner"></span> : children}
+      {loading ? <span className="loading loading-spinner loading-md"></span> : children}
     </button>
   )
 }

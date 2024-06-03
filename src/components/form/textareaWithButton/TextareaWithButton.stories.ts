@@ -14,7 +14,11 @@ export const Basic: Story = {
     name: 'Answer',
     label: 'Resposta',
     confirmLabel: 'Enviar',
-    className: 'h-36'
+    className: 'h-36',
+    onConfirm: (e) => {
+      e.preventDefault()
+      console.log('Submitted')
+    }
   }
 }
 
