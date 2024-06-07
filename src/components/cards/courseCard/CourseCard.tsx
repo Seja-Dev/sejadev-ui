@@ -40,7 +40,7 @@ export function CourseCard({
     <div
       className={`card w-fit md:w-96 shadow-xl cursor-pointer hover:shadow-primary-all ${className}`}
       onClick={onClick}>
-      <div className={`card-body bg-neutral-900 rounded-2xl p-6`}>
+      <div className={`card-body bg-common-dark25 rounded-2xl p-6`}>
         <h2 className="card-title">{title}</h2>
         <h4>
           <span className="font-bold">Nível:</span>
