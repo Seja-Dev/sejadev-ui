@@ -1,4 +1,4 @@
-import{ useState }from 'react'
+import { useState } from 'react'
 import { ITextarea, Textarea } from '../textarea/Textarea'
 import { Button } from '../../actions/button/Button'
 
@@ -25,15 +25,15 @@ export function TextareaWithButton({
   className,
   ...props
 }: ITextAreaWithButtons & { onChange?: (value: string) => void }) {
-  const [text, setText] = useState('');
+  const [text, setText] = useState('')
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
-    setText(e.target.value);
+    setText(e.target.value)
     if (onChange) {
-      onChange(e.target.value);
+      onChange(e.target.value)
     }
-  };
-  
+  }
+
   if (skeleton)
     return (
       <div
