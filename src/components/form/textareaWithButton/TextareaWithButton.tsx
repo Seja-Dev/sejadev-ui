@@ -1,3 +1,4 @@
+import{ useState }from 'react'
 import { ITextarea, Textarea } from '../textarea/Textarea'
 import { Button } from '../../actions/button/Button'
 
@@ -15,7 +16,7 @@ interface ITextAreaWithButtons extends ITextarea {
 export function TextareaWithButton({
   onConfirm,
   loading,
-  value,
+  onChange,
   confirmLabel = 'Enviar',
   disabledButton,
   skeleton,
@@ -23,7 +24,16 @@ export function TextareaWithButton({
   fullWidth,
   className,
   ...props
-}: ITextAreaWithButtons) {
+}: ITextAreaWithButtons & { onChange?: (value: string) => void }) {
+  const [text, setText] = useState('');
+
+  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
+    setText(e.target.value);
+    if (onChange) {
+      onChange(e.target.value);
+    }
+  };
+  
   if (skeleton)
     return (
       <div
@@ -32,8 +42,8 @@ export function TextareaWithButton({
 
   return (
     <form onSubmit={onConfirm}>
-      <Textarea value={value} {...props} className={className}>
-        <Button disabled={disabledButton || !Boolean(value)} loading={loading} type="submit">
+      <Textarea value={text} onChange={handleChange} {...props} className={className}>
+        <Button disabled={disabledButton || !Boolean(text)} loading={loading} type="submit">
           {confirmLabel}
         </Button>
       </Textarea>
