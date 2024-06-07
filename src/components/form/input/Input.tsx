@@ -7,7 +7,7 @@ interface IInput {
   label?: string
   fullWidth?: boolean
   required?: boolean
-  mask: string
+  mask?: string
   value?: string
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
   error?: boolean
@@ -22,7 +22,7 @@ export function Input({
   skeleton,
   fullWidth,
   required,
-  mask,
+  mask = '',
   label,
   value,
   error,
