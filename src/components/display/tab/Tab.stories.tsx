@@ -9,33 +9,83 @@ export default meta
 
 type Story = StoryObj<typeof Tab>
 
-export const Info: Story = {
+export const Active: Story = {
   args: {
-    children: 'Informações Básicas',
+    tabs: [
+      {
+        isActive: true,
+        title: 'Informações Básicas',
+        onClick: () => console.log('Informações Básicas')
+      },
+    ]
   }
 }
 export const Plan: Story = {
   args: {
-    children: 'Planos',
+    tabs: [
+      {
+        isActive: false,
+        title: 'Planos',
+        onClick: () => console.log('Planos')
+      },
+    ]
   }
 }
 
-export const certificate: Story = {
+export const Certificate: Story = {
   args: {
-    children: 'Certificados',
+    tabs: [
+      {
+        isActive: false,
+        title: 'Certificados',
+        onClick: () => console.log('Certificados')
+      },
+    ]
   }
 }
 
-export const Active: Story = {
+export const Tabs: Story = {
   args: {
-    children: 'Informações Básicas',
-    isActive: true,
+    tabs: [
+      {
+        isActive: true,
+        title: 'Informações Básicas',
+        onClick: () => console.log('Informações Básicas')
+      },
+      {
+        isActive: false,
+        title: 'Certificados',
+        onClick: () => console.log('Certificados')
+      },
+      {
+        isActive: false,
+        title: 'Planos',
+        onClick: () => console.log('Planos')
+      },
+    ]
   }
 }
 
 export const Skeleton: Story = {
   args: {
     skeleton: true,
+    tabs: [
+      {
+        isActive: true,
+        title: 'Informações Básicas',
+        onClick: () => console.log('Informações Básicas')
+      },
+      {
+        isActive: false,
+        title: 'Certificados',
+        onClick: () => console.log('Certificados')
+      },
+      {
+        isActive: false,
+        title: 'Planos',
+        onClick: () => console.log('Planos')
+      },
+    ]
   }
 }
 
