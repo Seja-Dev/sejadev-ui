@@ -12,23 +12,11 @@ interface Tabs {
   title?: string
 }
 
-export function Tab({
-  skeleton,
-  fullWidth,
-  tabs,
-  className,
-  skeletonClassName,
-}: ITab) {
-
+export function Tab({ skeleton, fullWidth, tabs, className, skeletonClassName }: ITab) {
   if (skeleton) {
     return (
       <div className={`${fullWidth && 'w-full'} flex flex-col gap-2 ${skeletonClassName}`}>
-        {tabs?.map((__, index) => (
-          <div
-            key={index}
-            className={`skeleton h-12 rounded-md`}
-          />
-        ))}
+        {tabs?.map((__, index) => <div key={index} className={`skeleton h-12 rounded-md`} />)}
       </div>
     )
   }
@@ -38,7 +26,7 @@ export function Tab({
       {tabs?.map((info, index) => (
         <div
           key={index}
-          className={`${info.isActive ? 'bg-primary' : 'bg-common-dark25'} p-3 text-lg text-common-white rounded-md ${className}`}
+          className={`${info.isActive ? 'bg-primary font-bold' : 'bg-common-dark25'} p-3 text-lg text-common-white cursor-pointer rounded-md hover:shadow-primary-all ${className}`}
           onClick={info.onClick}>
           {info.title}
         </div>
