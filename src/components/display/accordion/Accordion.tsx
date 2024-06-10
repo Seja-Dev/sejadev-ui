@@ -10,6 +10,7 @@ interface IAccordion {
   transparent?: boolean
   skeleton?: boolean
   className?: string
+  titleClassName?: string
   skeletonClassName?: string
   fullWidth?: boolean
 }
@@ -24,6 +25,7 @@ export function Accordion({
   skeleton,
   skeletonClassName,
   className,
+  titleClassName,
   fullWidth
 }: IAccordion) {
   const [open, setOpen] = useState(disabled ? false : firstState)
@@ -40,8 +42,8 @@ export function Accordion({
       <div
         onClick={() => !disabled && setOpen(!open)}
         className="flex justify-between items-center w-full cursor-pointer">
-        <div>
-          <h4 className="font-bold">{title}</h4>
+        <div className='overflow-hidden'>
+          <h4 className={`font-bold ${titleClassName}`}>{title}</h4>
           {subtitle && <p className="text-sm">{subtitle}</p>}
         </div>
         <div className={`transition-transform transform ${open ? 'rotate-180' : 'rotate-0'}`}>
