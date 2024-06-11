@@ -40,7 +40,7 @@ export function Answer({
 
   return (
     <div className='relative'>
-      <Accordion className='px-8' titleClassName="truncate text-ellipsis text-common-white">
+      <Accordion className='px-8' title={title} titleClassName="truncate text-ellipsis text-common-white">
         {answers && answers.map((answer, index) => (
           <ResponseDetails key={index} admin={admin} answer={answer.answer} name={name} date='12/12/2022' />
         ))}
