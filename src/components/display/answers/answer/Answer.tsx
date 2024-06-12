@@ -2,13 +2,12 @@ import { ReactNode } from 'react'
 import { Avatar } from '../../avatar/Avatar'
 
 import { Accordion } from '../../accordion/Accordion'
-import { ResponseDetails } from '../ResponseDetails/ResponseDetails'
+import { Badge } from '../../badge/Badge'
 
 export interface IAnswer {
   title?: string
   name?: string
   onClick?: () => void
-  admin?: boolean
   answers: Answer[];
   children?: ReactNode
   skeleton?: boolean
@@ -18,13 +17,15 @@ export interface IAnswer {
 }
 
 type Answer = {
-  answer: string
+  text: string
+  isTeam?: boolean
+  createdAt?: string
+  name?: string
 }
 
 export function Answer({
   title,
   answers,
-  admin,
   name,
   onClick,
   children,
@@ -39,15 +40,42 @@ export function Answer({
     )
 
   return (
-    <div className='relative'>
-      <Accordion className='px-8' title={title} titleClassName="truncate text-ellipsis text-common-white">
-        {answers && answers.map((answer, index) => (
-          <ResponseDetails key={index} admin={admin} answer={answer.answer} name={name} date='12/12/2022' />
-        ))}
-        <a href="#" className='text-primary' onClick={onClick}>CARREGAR MAIS RESPOSTAS</a>
+    <div className="relative">
+      <Avatar className="absolute -left-2 -top-2" text={name} />
+      <Accordion
+        className="px-8"
+        title={title}
+        titleClassName="truncate text-ellipsis text-common-white">
+        {answers &&
+          answers.map((answer, index) => (
+            <>
+              <div className="flex flex-col gap-4 mb-8">
+                <div className="flex gap-4 items-center" key={index}>
+                  <div>
+                    <Avatar
+                      className={`${answer.isTeam ? 'border-2 border-yellow-400' : ''}`}
+                      text={answer.name}
+                    />
+                  </div>
+                  <div className="flex flex-col">
+                    <h4 className="font-bold text-common-white">{answer.name}</h4>
+                    <p className="text-common-grey20 italic">{answer.createdAt}</p>
+                    {answer.isTeam && (
+                      <Badge className={`text-common-black bg-yellow-400 border border-yellow-400`}>
+                        Equipe Sejadev
+                      </Badge>
+                    )}
+                  </div>
+                </div>
+                <p className="text-sm">{answer.text}</p>
+              </div>
+            </>
+          ))}
+        <a href="#" className="text-primary" onClick={onClick}>
+          CARREGAR MAIS RESPOSTAS
+        </a>
         {children}
       </Accordion>
-      <Avatar className='absolute -left-2 -top-2' text={name} />
     </div>
   )
 }
