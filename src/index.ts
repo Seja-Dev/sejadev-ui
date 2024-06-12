@@ -13,6 +13,7 @@ export * from './components/display/accordion/Accordion'
 export * from './components/display/avatar/Avatar'
 export * from './components/display/badge/Badge'
 export * from './components/display/logo/Logo'
+export * from './components/display/tab/Tab'
 
 //FEEDBACK
 export * from './components/feedback/alert/Alert'
