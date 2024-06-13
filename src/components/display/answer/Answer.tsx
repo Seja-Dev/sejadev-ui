@@ -7,6 +7,8 @@ export interface IAnswer {
   createdAt?: string
   children?: React.ReactNode
   isTeam?: boolean
+  skeleton?: boolean
+  skeletonClassName?: string
 }
 
 export function Answer({
@@ -15,7 +17,27 @@ export function Answer({
   createdAt,
   children,
   isTeam,
+  skeleton,
+  skeletonClassName,
 }: IAnswer) {
+
+  if (skeleton) {
+    return (
+      <div className={`flex flex-col gap-2 w-96 mt-5 ${skeletonClassName}`}>
+        <div className='flex items-center gap-4'>
+          <div className='skeleton w-11 h-11 rounded-full'></div>
+          <div className='flex flex-col gap-2'>
+            <div className='skeleton h-4 w-28 rounded-md'></div>
+            <div className='skeleton h-4 w-32 rounded-md'></div>
+          </div>
+        </div>
+        <div className='flex flex-col gap-1 mt-2'>
+          <div className='skeleton h-4 w-full rounded-md'></div>
+          <div className='skeleton h-4 w-full rounded-md'></div>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className="flex flex-col gap-4 mb-8 py-4">
