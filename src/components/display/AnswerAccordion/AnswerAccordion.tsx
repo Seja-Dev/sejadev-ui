@@ -1,8 +1,8 @@
-import { useState, ReactNode } from 'react'
-import { RiArrowDropDownLine } from 'react-icons/ri'
+import { ReactNode } from 'react'
 import { Avatar } from '../avatar/Avatar'
 import { TextareaWithButton } from '../../form/textareaWithButton/TextareaWithButton'
 import { Answer } from '../answer/Answer'
+import { Accordion } from '../accordion/Accordion'
 
 export interface IAnswerAccorion {
   firstState?: boolean
@@ -33,7 +33,6 @@ type Answers = {
 }
 
 export function AnswerAccorion({
-  firstState = false,
   userProfile,
   question,
   onClick,
@@ -46,56 +45,39 @@ export function AnswerAccorion({
   transparent,
   skeleton,
   skeletonClassName,
-  className,
   fullWidth
 }: IAnswerAccorion) {
-  const [open, setOpen] = useState(disabled ? false : firstState)
 
   if (skeleton)
     return (<div className={`skeleton ${fullWidth && 'w-full'} h-14 rounded-md ${skeletonClassName}`}></div>)
 
   return (
-    <div
-      className={`${disabled ? 'bg-common-dark40' : transparent ? 'bg-transparent' : 'bg-common-dark20'} p-4 rounded-lg relative ${className}`}>
+    <div className='relative'>
       <Avatar className="absolute -left-3 -top-1 w-11 h-11" src={userProfile} />
-      <div
-        onClick={() => !disabled && setOpen(!open)}
-        className="flex justify-between items-center w-full cursor-pointer px-5">
-        <div className='overflow-hidden'>
-          <h4 className={`font-bold ${!open && 'truncate'}`}>{question}</h4>
+      <Accordion transparent={transparent} disabled={disabled} title={question} textClassName="truncate" className='px-8'>
+        {loading && (<p className='text-bold text-2xl text-common-white py-8'>Carregando...</p>)}
+        {answers && !loading &&
+          answers.map((answer, index) => (
+            <Answer
+              key={index}
+              name={answer.name}
+              text={answer.text}
+              userProfile={answer.userProfile}
+              createdAt={answer.createdAt}
+              isTeam={answer.isTeam}
+            />
+          ))}
+        <div className='py-5'>
+          <a className={`${!loading ? 'cursor-pointer hover:underline text-primary' : 'cursor-default text-common-grey20'} mb-5`} onClick={() => {
+            if (!loading && onClick) {
+              onClick();
+            }
+          }}>
+            CARREGAR MAIS RESPOSTAS
+          </a>
         </div>
-        <div className={`transition-transform transform ${open ? 'rotate-180' : 'rotate-0'}`}>
-          <RiArrowDropDownLine size={35} />
-        </div>
-      </div>
-      <div
-        className={`grid overflow-hidden transition-all duration-300 ease-in-out ${open ? 'grid-rows-[1fr] opacity-100 py-4' : 'grid-rows-[0fr] opacity-0'
-          }`}>
-        <div className={`overflow-hidden ${transparent ? 'bg-transparent' : 'bg-common-dark20'} px-5`}>
-          {loading && (<p className='text-bold text-2xl text-common-white py-8'>Carregando...</p>)}
-          {answers && !loading &&
-            answers.map((answer, index) => (
-              <Answer
-                key={index}
-                name={answer.name}
-                text={answer.text}
-                userProfile={answer.userProfile}
-                createdAt={answer.createdAt}
-                isTeam={answer.isTeam}
-              />
-            ))}
-          <div className='py-5'>
-            <a className={`${!loading ? 'cursor-pointer hover:underline text-primary' : 'cursor-default text-common-grey20'} mb-5`} onClick={() => {
-              if (!loading && onClick) {
-                onClick();
-              }
-            }}>
-              CARREGAR MAIS RESPOSTAS
-            </a>
-          </div>
-          <TextareaWithButton onConfirm={onConfirm} onChange={onChange} value={value} />
-        </div>
-      </div>
+        <TextareaWithButton onConfirm={onConfirm} onChange={onChange} value={value} />
+      </Accordion>
     </div>
   )
 }
