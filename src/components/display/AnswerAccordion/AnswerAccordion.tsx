@@ -52,7 +52,7 @@ export function AnswerAccorion({
   const [open, setOpen] = useState(disabled ? false : firstState)
 
   if (skeleton)
-    return ( <div className={`skeleton ${fullWidth && 'w-full'} h-14 rounded-md ${skeletonClassName}`}></div> )
+    return (<div className={`skeleton ${fullWidth && 'w-full'} h-14 rounded-md ${skeletonClassName}`}></div>)
 
   return (
     <div
@@ -85,7 +85,7 @@ export function AnswerAccorion({
               />
             ))}
           <div className='py-5'>
-            <a className={`cursor-pointer hover:underline mb-5 text-primary ${loading && 'cursor-default text-gray-500'}`} onClick={() => {
+            <a className={`${!loading ? 'cursor-pointer hover:underline text-primary' : 'cursor-default text-common-grey20'} mb-5`} onClick={() => {
               if (!loading && onClick) {
                 onClick();
               }
