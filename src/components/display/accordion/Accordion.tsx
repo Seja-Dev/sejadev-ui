@@ -8,7 +8,6 @@ interface IAccordion {
   disabled?: boolean
   children?: ReactNode
   transparent?: boolean
-  textClassName?: string
   skeleton?: boolean
   className?: string
   skeletonClassName?: string
@@ -22,7 +21,6 @@ export function Accordion({
   disabled,
   children,
   transparent,
-  textClassName,
   skeleton,
   skeletonClassName,
   className,
@@ -42,8 +40,8 @@ export function Accordion({
       <div
         onClick={() => !disabled && setOpen(!open)}
         className="flex justify-between items-center w-full cursor-pointer">
-        <div className='overflow-hidden'>
-          <h4 className={`font-bold ${!open && textClassName}`}>{title}</h4>
+        <div>
+          <h4 className="font-bold">{title}</h4>
           {subtitle && <p className="text-sm">{subtitle}</p>}
         </div>
         <div className={`transition-transform transform ${open ? 'rotate-180' : 'rotate-0'}`}>
