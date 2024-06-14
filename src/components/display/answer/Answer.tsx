@@ -8,6 +8,7 @@ export interface IAnswer {
   children?: React.ReactNode
   isTeam?: boolean
   skeleton?: boolean
+  loading?: boolean
   skeletonClassName?: string
 }
 
@@ -18,6 +19,7 @@ export function Answer({
   children,
   isTeam,
   skeleton,
+  loading,
   skeletonClassName,
 }: IAnswer) {
 
@@ -41,25 +43,30 @@ export function Answer({
 
   return (
     <div className="flex flex-col gap-4 mb-8 py-4">
-      <div className="flex gap-4 items-center">
-        <div>
-          <Avatar
-            className={`${isTeam ? 'border-2 border-yellow-400' : ''} w-11 h-11`}
-            text={name}
-            src={`${isTeam ? '' : userProfile}`}
-          />
-        </div>
-        <div className="flex flex-col">
-          <h4 className="font-bold text-common-white">{name}</h4>
-          <p className="text-common-grey20 italic">{createdAt}</p>
-          {isTeam && (
-            <Badge className={`text-common-black bg-yellow-400 border border-yellow-400`}>
-              Equipe Sejadev
-            </Badge>
-          )}
-        </div>
-      </div>
-      {children}
+
+      {loading ? <p className='text-2xl text-common-white'>Carregando...</p> : (
+        <>
+          <div className="flex gap-4 items-center">
+            <div>
+              <Avatar
+                className={`${isTeam ? 'border-2 border-yellow-400' : ''} w-11 h-11`}
+                text={name}
+                src={`${isTeam ? '' : userProfile}`}
+              />
+            </div>
+            <div className="flex flex-col">
+              <h4 className="font-bold text-common-white">{name}</h4>
+              <p className="text-common-grey20 italic">{createdAt}</p>
+              {isTeam && (
+                <Badge className={`text-common-black bg-yellow-400 border border-yellow-400`}>
+                  Equipe Sejadev
+                </Badge>
+              )}
+            </div>
+          </div>
+          {children}
+        </>
+      )}
     </div>
   )
 }

@@ -37,8 +37,8 @@ export function AccordionWithAvatar({
     <div className='relative'>
       <Avatar className="absolute -left-3 -top-1 w-11 h-11" src={userProfile} />
       <Accordion transparent={transparent} disabled={disabled} title={question} textClassName="truncate" className='px-8'>
-        {loading && (<p className='text-bold text-2xl text-common-white py-8'>Carregando...</p>)}
         {children}
+        {loading && (<p className='text-2xl text-common-white py-8'>Carregando...</p>)}
       </Accordion>
     </div>
   )
