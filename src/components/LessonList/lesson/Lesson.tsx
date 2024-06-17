@@ -1,5 +1,4 @@
-import { Lesson } from "../../../types"
-
+import { Lesson } from '../../../types'
 
 export interface ILessonStyle {
   status: 'default' | 'completed' | 'active' | 'pending' | 'error'
@@ -61,15 +60,10 @@ interface ILesson {
   onCheckClick: (id: string) => void
 }
 
-export function LessonList({
-  lessons,
-  module,
-  onLessonClick,
-  onCheckClick
-}: ILesson) {
+export function LessonList({ lessons, module, onLessonClick, onCheckClick }: ILesson) {
   return (
     <div>
-      {lessons.map(({ name, id,  status, isChallenge }, key) => (
+      {lessons.map(({ name, id, status, isChallenge }, key) => (
         <LessonStyle
           key={`lesson-${module}-${key}`}
           status={status}

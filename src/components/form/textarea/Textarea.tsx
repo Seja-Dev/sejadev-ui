@@ -37,7 +37,10 @@ export function Textarea({
   ...props
 }: ITextarea) {
   if (skeleton)
-    return <div className={`skeleton ${fullWidth && 'w-full'} h-24 rounded-md ${skeletonClassName}`}></div>
+    return (
+      <div
+        className={`skeleton ${fullWidth && 'w-full'} h-24 rounded-md ${skeletonClassName}`}></div>
+    )
 
   return (
     <div className="relative flex flex-col">

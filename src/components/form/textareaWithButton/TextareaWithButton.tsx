@@ -33,7 +33,7 @@ export function TextareaWithButton({
   return (
     <form onSubmit={onConfirm}>
       <Textarea value={value} {...props} className={className}>
-        <Button disabled={disabledButton || !Boolean(value)} loading={loading} type="submit">
+        <Button disabled={disabledButton || !value} loading={loading} type="submit">
           {confirmLabel}
         </Button>
       </Textarea>

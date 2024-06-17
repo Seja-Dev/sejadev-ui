@@ -15,7 +15,7 @@ export const Basic: Story = {
     subtitle: '3 aulas',
     children: 'Configuração do Ambiente',
     skeletonClassName: 'h-24 w-full'
-  },
+  }
 }
 
 export const Disabled: Story = {

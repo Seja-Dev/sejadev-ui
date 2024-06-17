@@ -1,6 +1,6 @@
 {
   "name": "sejadev-ui",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "SejaDev UI components",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -14,7 +14,8 @@
     "build": "storybook build",
     "build:publish": "rollup -c",
     "format": "prettier --write --parser typescript '**/*.{ts,tsx}'",
-    "lint": "eslint . --ext .ts,.tsx --ignore-path .gitignore --fix"
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx --ignore-path .gitignore",
+    "lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --ignore-path .gitignore --fix"
   },
   "keywords": [],
   "author": "",

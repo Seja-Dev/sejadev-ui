@@ -16,7 +16,7 @@ export const Active: Story = {
         isActive: true,
         title: 'Informações Básicas',
         onClick: () => console.log('Informações Básicas')
-      },
+      }
     ]
   }
 }
@@ -27,7 +27,7 @@ export const Plan: Story = {
         isActive: false,
         title: 'Planos',
         onClick: () => console.log('Planos')
-      },
+      }
     ]
   }
 }
@@ -39,7 +39,7 @@ export const Certificate: Story = {
         isActive: false,
         title: 'Certificados',
         onClick: () => console.log('Certificados')
-      },
+      }
     ]
   }
 }
@@ -61,7 +61,7 @@ export const Tabs: Story = {
         isActive: false,
         title: 'Planos',
         onClick: () => console.log('Planos')
-      },
+      }
     ]
   }
 }
@@ -84,9 +84,7 @@ export const Skeleton: Story = {
         isActive: false,
         title: 'Planos',
         onClick: () => console.log('Planos')
-      },
+      }
     ]
   }
 }
-
-

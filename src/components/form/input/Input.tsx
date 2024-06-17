@@ -32,7 +32,10 @@ export function Input({
   skeletonClassName,
   ...props
 }: IInput) {
-  if (skeleton) return <div className={`skeleton ${fullWidth && 'w-full'} h-14 rounded-md ${skeletonClassName}`} />
+  if (skeleton)
+    return (
+      <div className={`skeleton ${fullWidth && 'w-full'} h-14 rounded-md ${skeletonClassName}`} />
+    )
 
   return (
     <div className="relative flex flex-col">

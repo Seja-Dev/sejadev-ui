@@ -35,13 +35,16 @@ export function AccordionWithAvatar({
 
   useEffect(() => {
     onStateChange && onStateChange(open)
-  }, [open])
+  }, [open, onStateChange])
 
   if (skeleton)
-    return (<div className={`skeleton ${fullWidth && 'w-full'} h-14 rounded-md ${skeletonClassName}`}></div>)
+    return (
+      <div
+        className={`skeleton ${fullWidth && 'w-full'} h-14 rounded-md ${skeletonClassName}`}></div>
+    )
 
   return (
-    <div className='relative'>
+    <div className="relative">
       <Avatar className="absolute -left-3 -top-1 w-11 h-11" src={userProfile} />
       <div
         className={`${disabled ? 'bg-common-dark40' : transparent ? 'bg-transparent' : 'bg-common-dark20'} p-4 px-8 rounded-lg ${className}`}>
@@ -56,8 +59,9 @@ export function AccordionWithAvatar({
           </div>
         </div>
         <div
-          className={`grid transition-all duration-300 ease-in-out ${open ? 'grid-rows-[1fr] opacity-100 py-4' : 'grid-rows-[0fr] opacity-0'
-            }`}>
+          className={`grid transition-all duration-300 ease-in-out ${
+            open ? 'grid-rows-[1fr] opacity-100 py-4' : 'grid-rows-[0fr] opacity-0'
+          }`}>
           <div className={`overflow-hidden ${transparent ? 'bg-transparent' : 'bg-common-dark20'}`}>
             {children}
           </div>

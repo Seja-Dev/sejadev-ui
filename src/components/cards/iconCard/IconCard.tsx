@@ -8,8 +8,16 @@ interface IIconCard {
   onClick?: () => void
 }
 
-export function IconCard({ children, title, skeleton, className, skeletonClassName, onClick }: IIconCard) {
-  if (skeleton) return <div className={`skeleton md:max-w-[299px] h-32 rounded-xl ${skeletonClassName}`}></div>
+export function IconCard({
+  children,
+  title,
+  skeleton,
+  className,
+  skeletonClassName,
+  onClick
+}: IIconCard) {
+  if (skeleton)
+    return <div className={`skeleton md:max-w-[299px] h-32 rounded-xl ${skeletonClassName}`}></div>
 
   return (
     <div

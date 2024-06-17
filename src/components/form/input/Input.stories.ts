@@ -36,7 +36,7 @@ export const InputMaskDate: Story = {
   args: {
     name: 'Data',
     label: 'Data de Expiração',
-    mask: '99/99/9999',
+    mask: '99/99/9999'
   }
 }
 
@@ -44,6 +44,6 @@ export const InputMaskTel: Story = {
   args: {
     name: 'Telefone',
     label: 'Telefone',
-    mask: '(99) 99999-9999',
+    mask: '(99) 99999-9999'
   }
 }

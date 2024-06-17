@@ -11,18 +11,18 @@ type Story = StoryObj<typeof Avatar>
 
 export const WithImage: Story = {
   args: {
-    src: 'https://cdn-icons-png.flaticon.com/512/3135/3135768.png',
+    src: 'https://cdn-icons-png.flaticon.com/512/3135/3135768.png'
   }
 }
 
 export const WithoutImage: Story = {
   args: {
-    text: 'Aluno Teste',
+    text: 'Aluno Teste'
   }
 }
 
 export const Skeleton: Story = {
   args: {
-    skeleton: true,
+    skeleton: true
   }
 }
