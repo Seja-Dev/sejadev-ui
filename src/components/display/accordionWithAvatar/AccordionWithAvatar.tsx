@@ -6,7 +6,6 @@ export interface IAccordionWithAvatar {
   firstState?: boolean
   userProfile?: string
   name?: string
-  loading?: boolean
   value?: string
   question?: string
   disabled?: boolean
@@ -23,7 +22,6 @@ export function AccordionWithAvatar({
   userProfile,
   firstState = false,
   question,
-  loading,
   disabled,
   children,
   transparent,
@@ -62,7 +60,6 @@ export function AccordionWithAvatar({
             }`}>
           <div className={`overflow-hidden ${transparent ? 'bg-transparent' : 'bg-common-dark20'}`}>
             {children}
-            {loading && (<p className='text-2xl text-common-white py-8'>Carregando...</p>)}
           </div>
         </div>
       </div>
