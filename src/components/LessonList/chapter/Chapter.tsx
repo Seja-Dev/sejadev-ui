@@ -15,8 +15,22 @@ interface IChapter {
   handleClickLesson: (id: string) => void
 }
 
-export function Chapter({ module, chapters, firstState, className, skeleton, skeletonClassName, fullWidth, onCheckClick, handleClickLesson }: IChapter) {
-  if (skeleton) return <div className={`skeleton ${fullWidth && 'w-full'} h-20 rounded-md ${skeletonClassName}`}></div>
+export function Chapter({
+  module,
+  chapters,
+  firstState,
+  className,
+  skeleton,
+  skeletonClassName,
+  fullWidth,
+  onCheckClick,
+  handleClickLesson
+}: IChapter) {
+  if (skeleton)
+    return (
+      <div
+        className={`skeleton ${fullWidth && 'w-full'} h-20 rounded-md ${skeletonClassName}`}></div>
+    )
 
   return (
     <>
@@ -27,8 +41,7 @@ export function Chapter({ module, chapters, firstState, className, skeleton, ske
           subtitle={`${chapter.lessons.length} Aulas`}
           firstState={firstState}
           transparent={false}
-          className={className}
-          >
+          className={className}>
           <LessonList
             lessons={chapter.lessons}
             module={module}

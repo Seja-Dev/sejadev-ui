@@ -8,8 +8,16 @@ export interface ILogo {
   skeletonClassName?: string
 }
 
-export function Logo({ width, height, type = 'colored', pointer, className, skeleton, skeletonClassName }: ILogo) {
-  if(skeleton) return <div className={`skeleton w-52 h-16 rounded-md ${skeletonClassName}`}></div>
+export function Logo({
+  width,
+  height,
+  type = 'colored',
+  pointer,
+  className,
+  skeleton,
+  skeletonClassName
+}: ILogo) {
+  if (skeleton) return <div className={`skeleton w-52 h-16 rounded-md ${skeletonClassName}`}></div>
 
   const srcObj = {
     colored: '/logo/logo_colored.svg',

@@ -12,4 +12,3 @@ export function H5({ children, className, skeleton, skeletonClassName }: IH5) {
 
   return <h5 className={`font-bold text-lg ${className}`}>{children}</h5>
 }
-

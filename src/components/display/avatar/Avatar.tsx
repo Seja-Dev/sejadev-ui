@@ -7,7 +7,8 @@ interface IAvatar {
 }
 
 export function Avatar({ text = '', src, className, skeleton, skeletonClassName }: IAvatar) {
-  if (skeleton) return <div className={`skeleton w-10 h-10 rounded-full ${skeletonClassName}`}></div>
+  if (skeleton)
+    return <div className={`skeleton w-10 h-10 rounded-full ${skeletonClassName}`}></div>
 
   const name = text.slice(0, 2).toUpperCase()
 

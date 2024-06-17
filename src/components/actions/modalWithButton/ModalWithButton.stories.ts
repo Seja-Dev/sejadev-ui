@@ -12,7 +12,7 @@ type Story = StoryObj<typeof ModalWithButton>
 export const Basic: Story = {
   args: {
     buttonText: 'Open Modal',
-    children: 'Modal Content',
+    children: 'Modal Content'
   }
 }
 

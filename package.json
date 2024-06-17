@@ -14,7 +14,8 @@
     "build": "storybook build",
     "build:publish": "rollup -c",
     "format": "prettier --write --parser typescript '**/*.{ts,tsx}'",
-    "lint": "eslint . --ext .ts,.tsx --ignore-path .gitignore --fix"
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx --ignore-path .gitignore",
+    "lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --ignore-path .gitignore --fix"
   },
   "keywords": [],
   "author": "",
