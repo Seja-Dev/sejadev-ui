@@ -60,8 +60,9 @@ export function AccordionWithAvatar({
           </div>
         </div>
         <div
-          className={`grid transition-all duration-300 ease-in-out ${open ? 'grid-rows-[1fr] opacity-100 py-4' : 'grid-rows-[0fr] opacity-0'
-            }`}>
+          className={`grid transition-all duration-300 ease-in-out ${
+            open ? 'grid-rows-[1fr] opacity-100 py-4' : 'grid-rows-[0fr] opacity-0'
+          }`}>
           <div className={`overflow-hidden ${transparent ? 'bg-transparent' : 'bg-common-dark20'}`}>
             {children}
           </div>
