@@ -6,7 +6,6 @@ export interface IAccordionWithAvatar {
   firstState?: boolean
   userProfile?: string
   name?: string
-  value?: string
   question?: string
   disabled?: boolean
   children?: ReactNode
