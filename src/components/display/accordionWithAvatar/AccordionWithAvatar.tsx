@@ -21,6 +21,7 @@ export interface IAccordionWithAvatar {
 export function AccordionWithAvatar({
   userProfile,
   firstState = false,
+  name,
   question,
   disabled,
   children,
@@ -45,7 +46,7 @@ export function AccordionWithAvatar({
 
   return (
     <div className="relative">
-      <Avatar className="absolute -left-3 -top-1 w-11 h-11" src={userProfile} />
+      <Avatar className="absolute -left-3 -top-1 w-11 h-11" src={userProfile} text={name}/>
       <div
         className={`${disabled ? 'bg-common-dark40' : transparent ? 'bg-transparent' : 'bg-common-dark20'} p-4 px-8 rounded-lg ${className}`}>
         <div
