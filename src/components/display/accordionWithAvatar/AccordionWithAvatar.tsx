@@ -46,7 +46,7 @@ export function AccordionWithAvatar({
 
   return (
     <div className="relative">
-      <Avatar className="absolute -left-3 -top-1 w-11 h-11" src={userProfile} text={name}/>
+      <Avatar className="absolute -left-3 -top-1 w-11 h-11" src={userProfile} text={name} />
       <div
         className={`${disabled ? 'bg-common-dark40' : transparent ? 'bg-transparent' : 'bg-common-dark20'} p-4 px-8 rounded-lg ${className}`}>
         <div
@@ -60,9 +60,8 @@ export function AccordionWithAvatar({
           </div>
         </div>
         <div
-          className={`grid transition-all duration-300 ease-in-out ${
-            open ? 'grid-rows-[1fr] opacity-100 py-4' : 'grid-rows-[0fr] opacity-0'
-          }`}>
+          className={`grid transition-all duration-300 ease-in-out ${open ? 'grid-rows-[1fr] opacity-100 py-4' : 'grid-rows-[0fr] opacity-0'
+            }`}>
           <div className={`overflow-hidden ${transparent ? 'bg-transparent' : 'bg-common-dark20'}`}>
             {children}
           </div>
