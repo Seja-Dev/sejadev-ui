@@ -5,14 +5,13 @@ export interface IDarkCard {
   className?: string
   skeleton?: boolean
   skeletonClassName?: string
+  fullWidth?: boolean
 }
 
-export const DarkCard = ({ children, className, skeleton, skeletonClassName }: IDarkCard) => {
+export const DarkCard = ({ children, className, skeleton, skeletonClassName, fullWidth }: IDarkCard) => {
   if (skeleton) {
     return (
-      <div className={`skeleton rounded-md w-80 h-40 ${skeletonClassName}`}>
-        {children}
-      </div>
+      <div className={`skeleton rounded-md w-80 h-40 ${fullWidth && 'w-full'} ${skeletonClassName}`} />
     )
   }
 

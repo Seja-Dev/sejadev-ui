@@ -40,6 +40,7 @@ DarkCardComponent.args = {
 export const Skeleton: Story = {
   args: {
     skeleton: true,
-    className: 'w-80 h-40'
+    skeletonClassName: 'w-32 h-40',
+    fullWidth: true
   }
 }
