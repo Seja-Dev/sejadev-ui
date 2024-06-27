@@ -13,8 +13,7 @@ export const DarkCardComponent: Story = (args: IDarkCard) => {
   return (
     <DarkCard {...args}>
       <p>
-        <b>Transação: </b>
-        7
+        <b>Transação: </b>7
       </p>
       <p>
         <b>Status: </b>
