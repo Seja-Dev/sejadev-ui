@@ -26,7 +26,7 @@ export function Tab({ skeleton, fullWidth, tabs, className, skeletonClassName }:
       {tabs?.map((info, index) => (
         <div
           key={index}
-          className={`${info.isActive ? 'bg-primary font-bold' : 'bg-common-dark25'} p-3 text-lg text-common-white cursor-pointer rounded-md hover:shadow-primary-all ${className}`}
+          className={`${info.isActive ? 'bg-primary font-bold' : 'bg-common-dark20'} p-3 text-lg text-common-white cursor-pointer rounded-md hover:shadow-primary-all ${className}`}
           onClick={info.onClick}>
           {info.title}
         </div>
