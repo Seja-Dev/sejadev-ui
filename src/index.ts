@@ -7,6 +7,7 @@ export * from './components/actions/modalWithButton/ModalWithButton'
 //CARDS
 export * from './components/cards/courseCard/CourseCard'
 export * from './components/cards/iconCard/IconCard'
+export * from './components/cards/darkCard/DarkCard'
 
 //DISPLAY
 export * from './components/display/accordion/Accordion'
