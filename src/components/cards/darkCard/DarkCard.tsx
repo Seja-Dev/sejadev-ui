@@ -25,7 +25,7 @@ export const DarkCard = ({
 
   return (
     <div
-      className={`rounded-md p-5 flex flex-col gap-2 cursor-pointer bg-common-black ${className}`}>
+      className={`rounded-md p-5 flex flex-col gap-2 cursor-pointer bg-common-black hover:shadow-primary-all ${className}`}>
       {children}
     </div>
   )
