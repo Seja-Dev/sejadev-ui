@@ -21,7 +21,7 @@ export function IconCard({
 
   return (
     <div
-      className={`md:max-w-[299px] bg-neutral-900 flex flex-col items-center rounded-xl p-5 gap-2 cursor-pointer hover:shadow-primary-all ${className}`}
+      className={`md:max-w-[299px] bg-common-dark20 flex flex-col items-center rounded-xl p-5 gap-2 cursor-pointer hover:shadow-primary-all ${className}`}
       onClick={onClick}>
       {children}
       <h3 className="font-bold text-xl">{title}</h3>
