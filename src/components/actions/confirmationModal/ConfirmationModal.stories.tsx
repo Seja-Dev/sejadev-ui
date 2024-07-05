@@ -35,7 +35,7 @@ export default meta
 
 type Story = StoryObj<typeof ConfirmationModal>
 
-export const WithComponenteAsChildren: Story = {
+export const WithComponentAsChildren: Story = {
   args: {
     children: <Button fullWidth />
   }
