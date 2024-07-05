@@ -3,7 +3,6 @@ export * from './components/actions/button/Button'
 export * from './components/actions/dropdown/Dropdown'
 export * from './components/actions/modal/Modal'
 export * from './components/actions/modalWithButton/ModalWithButton'
-export * from './components/actions/confirmationModal/ConfirmationModal'
 
 //CARDS
 export * from './components/cards/courseCard/CourseCard'
