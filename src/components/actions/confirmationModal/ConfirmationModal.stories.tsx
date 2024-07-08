@@ -2,7 +2,6 @@ import { useState } from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 
 import { ConfirmationModal } from './ConfirmationModal'
-import { Button } from '../button/Button'
 
 const meta: Meta<typeof ConfirmationModal> = {
   component: ConfirmationModal,
@@ -11,6 +10,7 @@ const meta: Meta<typeof ConfirmationModal> = {
 
     const handleSubmit = () => {
       console.log('Submitted')
+      setOpen(false)
     }
 
     return (
@@ -19,12 +19,12 @@ const meta: Meta<typeof ConfirmationModal> = {
         <ConfirmationModal
           {...args}
           open={open}
-          setOpen={() => setOpen(!open)}
+          setOpen={() => setOpen(true)}
           onCancel={() => setOpen(false)}
           onConfirm={() => handleSubmit()}
-          confirmationButton="Deletar"
-          cancelButton="Cancelar"
-          confirmButtonVariant="error">
+          confirmationButton="Delete"
+          cancelButton="Cancel"
+          confirmButtonVariant="ghost">
           {args.children}
         </ConfirmationModal>
       </>
@@ -37,7 +37,12 @@ type Story = StoryObj<typeof ConfirmationModal>
 
 export const WithComponentAsChildren: Story = {
   args: {
-    children: <Button fullWidth />
+    children: (
+      <div>
+        <h1 className="text-xl font-bold">Are you sure you want to delete this item?</h1>
+        <p className="text-sm text-gray-400">This action cannot be undone.</p>
+      </div>
+    )
   }
 }
 
