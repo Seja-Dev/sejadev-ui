@@ -1,3 +1,15 @@
+export type ButtonVariant =
+  | 'primary'
+  | 'secondary'
+  | 'accent'
+  | 'neutral'
+  | 'ghost'
+  | 'link'
+  | 'success'
+  | 'error'
+
+export type ButtonSize = 'xs' | 'sm' | 'md' | 'lg'
+
 interface IButton {
   skeleton?: boolean
   fullWidth?: boolean
@@ -6,8 +18,8 @@ interface IButton {
   loading?: boolean
   disabled?: boolean
   onClick?: () => void
-  btnSize?: 'xs' | 'sm' | 'md' | 'lg'
-  variant?: 'primary' | 'secondary' | 'accent' | 'neutral' | 'ghost' | 'link' | 'success' | 'error'
+  btnSize?: ButtonSize
+  variant?: ButtonVariant
 }
 
 export function Button({

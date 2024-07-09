@@ -18,13 +18,13 @@ const meta: Meta<typeof ConfirmationModal> = {
         <button onClick={() => setOpen(true)}>Open Modal</button>
         <ConfirmationModal
           {...args}
-          open={open}
-          setOpen={() => setOpen(true)}
+          isOpen={open}
+          setIsOpen={(val) => setOpen(val)}
           onCancel={() => setOpen(false)}
           onConfirm={() => handleSubmit()}
           confirmationButton="Delete"
-          cancelButton="Cancel"
-          confirmButtonVariant="ghost">
+          confirmButtonVariant="error"
+          cancelButton="Cancel">
           {args.children}
         </ConfirmationModal>
       </>
