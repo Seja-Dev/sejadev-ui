@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
+
 import InputMask from 'react-input-mask'
 
 interface IInput {
@@ -19,7 +20,9 @@ interface IInput {
   disabled?: boolean
 }
 
-export function Input({
+export const Input = forwardRef<HTMLInputElement, IInput>(
+  (
+    {
   name,
   maxLength,
   skeleton,
@@ -35,7 +38,7 @@ export function Input({
   labelClassName,
   skeletonClassName,
   ...props
-}: IInput) {
+}: ref ) => {
   if (skeleton)
     return (
       <div className={`skeleton ${fullWidth && 'w-full'} h-14 rounded-md ${skeletonClassName}`} />
@@ -44,6 +47,7 @@ export function Input({
   return (
     <div className="relative flex flex-col">
       <InputMask
+        inputRef={ref}
         mask={mask}
         disabled={disabled}
         type={type}
@@ -72,3 +76,5 @@ export function Input({
     </div>
   )
 }
+
+Input.displayName = 'Input'
