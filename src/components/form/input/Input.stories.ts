@@ -13,7 +13,6 @@ export const Primary: Story = {
   args: {
     name: 'Nome',
     label: 'Nome Completo',
-    className: 'focus:ring-0 focus:ring-none focus:border-none',
     skeletonClassName: 'w-96 h-12'
   }
 }
