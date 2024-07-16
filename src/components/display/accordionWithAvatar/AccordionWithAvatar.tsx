@@ -6,7 +6,7 @@ export interface IAccordionWithAvatar {
   firstState?: boolean
   userProfile?: string
   name?: string
-  question?: ReactNode
+  question?: string | ReactNode
   disabled?: boolean
   children?: ReactNode
   transparent?: boolean
@@ -52,7 +52,7 @@ export function AccordionWithAvatar({
           onClick={() => !disabled && setOpen(!open)}
           className="flex justify-between items-center w-full cursor-pointer">
           <div className="overflow-hidden">
-            <h4 className={`font-bold ${!open && 'truncate'}`}>{question}</h4>
+            <div className={`font-bold ${!open && 'truncate'}`}>{question}</div>
           </div>
           <div className={`transition-transform transform ${open ? 'rotate-180' : 'rotate-0'}`}>
             <RiArrowDropDownLine size={35} />
