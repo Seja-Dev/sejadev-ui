@@ -3,6 +3,7 @@ import InputMask from 'react-input-mask'
 
 interface IInput {
   name?: string
+  maxLength?: number
   skeleton?: boolean
   label?: string
   fullWidth?: boolean
@@ -13,12 +14,14 @@ interface IInput {
   error?: boolean
   type?: string
   className?: string
+  labelClassName?: string
   skeletonClassName?: string
   disabled?: boolean
 }
 
 export function Input({
   name,
+  maxLength,
   skeleton,
   fullWidth,
   required,
@@ -29,6 +32,7 @@ export function Input({
   type,
   disabled,
   className,
+  labelClassName,
   skeletonClassName,
   ...props
 }: IInput) {
@@ -43,20 +47,21 @@ export function Input({
         mask={mask}
         disabled={disabled}
         type={type}
-        className={`peer border-2 rounded-md placeholder-transparent disabled:opacity-40 outline-none ${className}
+        maxLength={maxLength}
+        className={`peer border-2 rounded-md placeholder-transparent disabled:opacity-40 outline-none 
         ${
           error
             ? 'border-error'
             : 'border-input-background focus:border-primary focus:ring-1 focus:ring-primary'
         } bg-input-background px-5 pt-5 pb-2 
-        ${fullWidth && 'w-full'} `}
+        ${fullWidth && 'w-full'} ${className}`}
         name={name}
         value={value}
         placeholder=""
         {...props}
       />
       <label
-        className={`absolute text-common-grey20 top-1 left-5 text-xs transition-all pointer-events-none peer-placeholder-shown:text-base peer-placeholder-shown:top-4 peer-focus:top-1 peer-focus:text-xs`}>
+        className={`absolute text-common-grey20 top-1 left-5 text-xs transition-all pointer-events-none peer-placeholder-shown:text-base peer-placeholder-shown:top-4 peer-focus:top-1 peer-focus:text-xs ${labelClassName}`}>
         {required ? `${label} *` : label}
       </label>
       {error && (

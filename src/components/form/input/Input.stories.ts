@@ -13,6 +13,7 @@ export const Primary: Story = {
   args: {
     name: 'Nome',
     label: 'Nome Completo',
+    className: 'focus:ring-0 focus:ring-none focus:border-none',
     skeletonClassName: 'w-96 h-12'
   }
 }
@@ -29,6 +30,14 @@ export const Skeleton: Story = {
   args: {
     skeleton: true,
     className: 'w-1/6 h-12 rounded-md'
+  }
+}
+
+export const InputMaxLength: Story = {
+  args: {
+    name: 'Nome',
+    label: 'Nome Completo',
+    maxLength: 10
   }
 }
 
