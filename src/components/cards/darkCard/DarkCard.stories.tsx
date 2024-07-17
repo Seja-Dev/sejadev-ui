@@ -43,3 +43,10 @@ export const Skeleton: Story = {
     fullWidth: true
   }
 }
+
+export const Disabled: Story = {
+  args: {
+    children: 'This is a dark card',
+    disabled: true
+  }
+}
