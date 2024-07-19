@@ -6,6 +6,7 @@ export interface IDarkCard {
   skeleton?: boolean
   skeletonClassName?: string
   fullWidth?: boolean
+  disabled?: boolean
 }
 
 export const DarkCard = ({
@@ -13,7 +14,8 @@ export const DarkCard = ({
   className,
   skeleton,
   skeletonClassName,
-  fullWidth
+  fullWidth,
+  disabled
 }: IDarkCard) => {
   if (skeleton) {
     return (
@@ -25,7 +27,7 @@ export const DarkCard = ({
 
   return (
     <div
-      className={`rounded-md p-5 flex flex-col gap-2 cursor-pointer bg-common-black hover:shadow-primary-all ${className}`}>
+      className={`rounded-md p-5 flex flex-col gap-2 bg-common-black ${!disabled && 'cursor-pointer hover:shadow-primary-all'} ${className}`}>
       {children}
     </div>
   )

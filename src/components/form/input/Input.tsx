@@ -4,6 +4,7 @@ import InputMask from 'react-input-mask'
 
 interface IInput {
   name?: string
+  maxLength?: number
   skeleton?: boolean
   label?: string
   fullWidth?: boolean
@@ -14,6 +15,7 @@ interface IInput {
   error?: boolean
   type?: string
   className?: string
+  labelClassName?: string
   skeletonClassName?: string
   disabled?: boolean
 }
@@ -22,6 +24,7 @@ export const Input = forwardRef<HTMLInputElement, IInput>(
   (
     {
       name,
+      maxLength,
       skeleton,
       fullWidth,
       required,
@@ -32,6 +35,7 @@ export const Input = forwardRef<HTMLInputElement, IInput>(
       type,
       disabled,
       className,
+      labelClassName,
       skeletonClassName,
       ...props
     },
@@ -45,6 +49,7 @@ export const Input = forwardRef<HTMLInputElement, IInput>(
     return (
       <div className="relative flex flex-col">
         <InputMask
+          maxLength={maxLength}
           inputRef={ref}
           mask={mask}
           disabled={disabled}
@@ -62,7 +67,7 @@ export const Input = forwardRef<HTMLInputElement, IInput>(
           {...props}
         />
         <label
-          className={`absolute text-common-grey20 top-1 left-5 text-xs transition-all pointer-events-none peer-placeholder-shown:text-base peer-placeholder-shown:top-4 peer-focus:top-1 peer-focus:text-xs`}>
+          className={`absolute text-common-grey20 top-1 left-5 text-xs transition-all pointer-events-none peer-placeholder-shown:text-base peer-placeholder-shown:top-4 peer-focus:top-1 peer-focus:text-xs ${labelClassName}`}>
           {required ? `${label} *` : label}
         </label>
         {error && (

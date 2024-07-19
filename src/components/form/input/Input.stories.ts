@@ -47,3 +47,11 @@ export const InputMaskTel: Story = {
     mask: '(99) 99999-9999'
   }
 }
+
+export const InputMaxLength: Story = {
+  args: {
+    name: 'Nome',
+    label: 'Nome Completo',
+    maxLength: 20
+  }
+}
