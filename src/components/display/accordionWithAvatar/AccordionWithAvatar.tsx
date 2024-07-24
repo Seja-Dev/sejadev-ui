@@ -44,8 +44,12 @@ export function AccordionWithAvatar({
     )
 
   return (
-    <div className="relative">
-      <Avatar className="absolute -left-3 -top-1 w-11 h-11" src={userProfile} text={name} />
+    <div className="">
+      <Avatar
+        className="!absolute  -left-1 top-2 w-11 h-11 bg-primary text-xl text-white font-bold"
+        src={userProfile}
+        text={name}
+      />
       <div
         className={`${disabled ? 'bg-common-dark40' : transparent ? 'bg-transparent' : 'bg-common-dark20'} p-4 px-8 rounded-lg ${className}`}>
         <div
