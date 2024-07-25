@@ -9,6 +9,7 @@ export * from './components/actions/confirmationModal/ConfirmationModal'
 export * from './components/cards/courseCard/CourseCard'
 export * from './components/cards/iconCard/IconCard'
 export * from './components/cards/darkCard/DarkCard'
+export * from './components/cards/productCard/ProductCard'
 
 //DISPLAY
 export * from './components/display/accordion/Accordion'
