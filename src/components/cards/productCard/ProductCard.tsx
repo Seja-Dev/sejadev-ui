@@ -6,6 +6,8 @@ import { Badge, BadgeSize, BadgeVariant } from '../../display/badge/Badge'
 export interface IProductCard {
   image?: string
   title?: string
+  className?: string
+  skeletonClassName?: string
   description?: string
   blockedIcon?: React.ReactNode
   buttonText?: string
@@ -22,6 +24,8 @@ export interface IProductCard {
 export function ProductCard({
   image,
   title,
+  className,
+  skeletonClassName,
   description = '',
   blockedIcon,
   buttonText = '',
@@ -36,7 +40,8 @@ export function ProductCard({
 }: IProductCard) {
   if (skeleton) {
     return (
-      <div className="flex max-w-[350px] max-h-[500px] flex-col gap-4 rounded-none">
+      <div
+        className={`flex max-w-[350px] max-h-[500px] flex-col gap-4 rounded-none ${skeletonClassName}`}>
         <div className="skeleton h-60 w-full"></div>
         <div className="flex flex-col items-center gap-2">
           <div className="skeleton h-6 w-72"></div>
@@ -55,7 +60,7 @@ export function ProductCard({
 
   return (
     <div
-      className={`relative w-[300px] h-[450px] sm:w-[350px] sm:h-[500px] bg-common-dark20 ${containerClass} flex flex-col items-center`}>
+      className={`relative w-[300px] h-[450px] sm:w-[350px] sm:h-[500px] bg-common-dark20 ${containerClass} flex flex-col items-center ${className}`}>
       <img
         src={image}
         alt={title}
