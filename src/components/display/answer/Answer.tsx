@@ -42,10 +42,10 @@ export function Answer({
   return (
     <div className="flex flex-col gap-4 mb-8 py-4">
       <>
-        <div className="flex gap-4 items-center">
+        <div className="flex gap-4 items-center text-common-white">
           <div>
             <Avatar
-              className={`${isTeam ? 'border-2 border-yellow-400' : ''} w-11 h-11`}
+              className={`bg-primary text-xl ${isTeam ? 'border-2 border-yellow-400' : ''} w-11 h-11`}
               text={name}
               src={`${isTeam ? '' : userProfile}`}
             />
