@@ -11,7 +11,7 @@ interface EditRowProps {
   onEditClick?: () => void
 }
 
-const EditRow: React.FC<EditRowProps> = ({
+export function EditRow({
   mode,
   orderedNumer,
   label = '',
@@ -22,7 +22,7 @@ const EditRow: React.FC<EditRowProps> = ({
   skeletonClassName,
   onCheckChange,
   onEditClick
-}) => {
+}: EditRowProps) {
   if (skeleton) {
     return <div className={`skeleton rounded-sm w-full p-6 ${skeletonClassName}`} />
   }
