@@ -12,7 +12,7 @@ export default meta
 type Story = StoryObj<typeof ProductCard>
 
 const urlImg =
-  'https://s3-alpha-sig.figma.com/img/cd34/8892/40195cfc778cd02f32e19965a043d5fa?Expires=1722816000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=NOV1CVL1sXtSUadCT0V7fOAJ89MkiaQxeK~jNU0R6Lu4FUpgOu3I7MyhiXeLt7uFsiK-ZD-HQh54nf-ijfKOIKrlskXayAvSJCaMkt5nCSFacRUxZSwPVfA4N0BnTFyrpeE1rCLTifmYXEpbfXpbPFSX1~h5uXhgecbKUO8a5iK4dFNmVyVSp72KKcw4LGoflrXSl2OwSP56bG6sy8gtg~O78KcSe4ng7Vdxt6Yvu~4WpDbqOu0~IJQ5OCyOZaluEBYhthmanc-Q8BqZEYGu2FiW8UHZpU38K5zEyKuEarLxNN0IOY3~deIJHJwS1epm2iikntyzWPC~4h3NSNCNDA__'
+  'https://relaxaeusouti.com.br/wp-content/uploads/2020/11/Curso-Programador-FullStack-JavaScript-em-8-Semanas-e%CC%81-Bom-Vale-pena.jpeg'
 
 export const Default: Story = {
   args: {
@@ -41,7 +41,7 @@ export const Blocked: Story = {
   }
 }
 
-export const Editable: Story = {
+export const AdminCard: Story = {
   args: {
     image: urlImg,
     title: 'Método Crescimento Exponencial',
@@ -52,12 +52,12 @@ export const Editable: Story = {
     badgeText: 'Curso publicado',
     badgeClassName: 'text-white',
     badgeSize: 'md',
-    status: 'editable',
+    status: 'default',
     onClick: () => alert('Administrar clicado')
   }
 }
 
-export const EditableDraft: Story = {
+export const AdminCardDraft: Story = {
   args: {
     image: urlImg,
     title: 'Método Crescimento Exponencial',
@@ -69,7 +69,7 @@ export const EditableDraft: Story = {
     badgeClassName: 'text-white',
     badgeVariant: 'neutral',
     badgeSize: 'md',
-    status: 'editable',
+    status: 'default',
     onClick: () => alert('Administrar clicado')
   }
 }

@@ -17,7 +17,7 @@ export interface IProductCard {
   badgeVariant?: BadgeVariant
   badgeClassName?: string
   onClick?: () => void
-  status?: 'default' | 'blocked' | 'editable'
+  status?: 'default' | 'blocked'
   badgeText?: string
 }
 
@@ -41,14 +41,14 @@ export function ProductCard({
   if (skeleton) {
     return (
       <div
-        className={`flex max-w-[350px] max-h-[500px] flex-col gap-4 rounded-none ${skeletonClassName}`}>
-        <div className="skeleton h-60 w-full"></div>
+        className={`flex w-[300px] h-[450px] sm:w-[350px] sm:h-[500px] flex-col gap-4 rounded-none ${skeletonClassName}`}>
+        <div className="skeleton h-64 w-full"></div>
         <div className="flex flex-col items-center gap-2">
-          <div className="skeleton h-6 w-72"></div>
-          <div className="skeleton h-6 w-64"></div>
-          <div className="skeleton h-3 w-full"></div>
-          <div className="skeleton h-3 w-full"></div>
-          <div className="skeleton h-3 w-full"></div>
+          <div className="skeleton h-8 w-72"></div>
+          <div className="skeleton h-8 w-64"></div>
+          <div className="skeleton h-4 w-full"></div>
+          <div className="skeleton h-4 w-full"></div>
+          <div className="skeleton h-4 w-full"></div>
         </div>
         <div className="skeleton h-12 w-full rounded-md"></div>
       </div>
