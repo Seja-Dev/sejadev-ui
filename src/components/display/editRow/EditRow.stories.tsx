@@ -28,18 +28,16 @@ const meta: Meta<typeof EditRow> = {
             <EditRow
               {...args}
               key={task.id}
-              children={
-                <div className="mr-2">
-                  <input
-                    type="checkbox"
-                    checked={checkedState[task.id] || false}
-                    onChange={(e) => handleCheckChange(task.id, e.target.checked)}
-                  />
-                </div>
-              }
               icon={<MdOutlineModeEdit />}
-              onEditClick={() => alert('Edit clicked')}
-            />
+              onEditClick={() => alert('Edit clicked')}>
+              <div className="mr-2">
+                <input
+                  type="checkbox"
+                  checked={checkedState[task.id] || false}
+                  onChange={(e) => handleCheckChange(task.id, e.target.checked)}
+                />
+              </div>
+            </EditRow>
           ))}
         </div>
       </>
@@ -59,7 +57,6 @@ export const CheckboxMode: Story = {
 export const DefaultMode: Story = {
   args: {
     label: 'Guia inicial',
-    children: null,
     icon: null,
     onEditClick: undefined
   },
@@ -69,7 +66,6 @@ export const DefaultMode: Story = {
 export const ListStyleMode: Story = {
   args: {
     label: 'Guia inicial',
-    children: null,
     icon: null,
     onEditClick: undefined
   },
@@ -79,10 +75,10 @@ export const ListStyleMode: Story = {
         <EditRow
           {...args}
           key={task.id}
-          children={<div className="mr-2">{index + 1}.</div>}
           icon={<MdOutlineModeEdit />}
-          onEditClick={() => alert('Edit clicked')}
-        />
+          onEditClick={() => alert('Edit clicked')}>
+          <div className="mr-2">{index + 1}.</div>
+        </EditRow>
       ))}
     </div>
   )
