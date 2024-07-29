@@ -63,9 +63,7 @@ export const DefaultMode: Story = {
     icon: null,
     onEditClick: undefined
   },
-  render: ({ ...args }) => (
-    <EditRow {...args} icon={<MdOutlineModeEdit />} onEditClick={() => alert('Edit clicked')} />
-  )
+  render: ({ ...args }) => <EditRow {...args} />
 }
 
 export const ListStyleMode: Story = {

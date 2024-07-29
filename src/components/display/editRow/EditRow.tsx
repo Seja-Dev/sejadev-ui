@@ -27,11 +27,13 @@ export function EditRow({
         {children}
         <span className="text-white flex-1">{label}</span>
       </div>
-      <button
-        onClick={onEditClick}
-        className="text-white bg-blue-500 p-2 rounded hover:bg-blue-600">
-        {icon}
-      </button>
+      {icon && (
+        <button
+          onClick={onEditClick}
+          className="text-white bg-blue-500 p-2 rounded hover:bg-blue-600">
+          {icon}
+        </button>
+      )}
     </div>
   )
 }
