@@ -30,13 +30,12 @@ const meta: Meta<typeof EditRow> = {
               key={task.id}
               icon={<MdOutlineModeEdit />}
               onEditClick={() => alert('Edit clicked')}>
-              <div className="mr-2">
-                <input
-                  type="checkbox"
-                  checked={checkedState[task.id] || false}
-                  onChange={(e) => handleCheckChange(task.id, e.target.checked)}
-                />
-              </div>
+              <input
+                type="checkbox"
+                className="checkbox checkbox-primary mr-4"
+                checked={checkedState[task.id] || false}
+                onChange={(e) => handleCheckChange(task.id, e.target.checked)}
+              />
             </EditRow>
           ))}
         </div>

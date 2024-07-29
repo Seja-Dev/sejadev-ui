@@ -23,9 +23,9 @@ export function EditRow({
   return (
     <div
       className={`flex items-center justify-between p-3 bg-common-dark30 rounded-sm ${className}`}>
-      <div className="flex items-center w-full">
+      <div className="flex w-full">
         {children}
-        <span className="text-white flex-1">{label}</span>
+        <span className="text-white flex-1 font-bold">{label}</span>
       </div>
       {icon && (
         <button
