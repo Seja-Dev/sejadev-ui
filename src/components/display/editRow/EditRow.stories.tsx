@@ -76,7 +76,7 @@ export const ListStyleMode: Story = {
           key={task.id}
           icon={<MdOutlineModeEdit />}
           onEditClick={() => alert('Edit clicked')}>
-          <div className="mr-2">{index + 1}.</div>
+          <div className="mr-2 font-bold">{index + 1} -</div>
         </EditRow>
       ))}
     </div>
