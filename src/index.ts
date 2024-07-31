@@ -19,6 +19,7 @@ export * from './components/display/logo/Logo'
 export * from './components/display/accordionWithAvatar/AccordionWithAvatar'
 export * from './components/display/answer/Answer'
 export * from './components/display/tab/Tab'
+export * from './components/display/editRow/EditRow'
 
 //FEEDBACK
 export * from './components/feedback/alert/Alert'
