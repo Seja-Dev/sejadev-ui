@@ -9,6 +9,7 @@ export * from './components/actions/confirmationModal/ConfirmationModal'
 export * from './components/cards/courseCard/CourseCard'
 export * from './components/cards/iconCard/IconCard'
 export * from './components/cards/darkCard/DarkCard'
+export * from './components/cards/productCard/ProductCard'
 
 //DISPLAY
 export * from './components/display/accordion/Accordion'
@@ -18,6 +19,7 @@ export * from './components/display/logo/Logo'
 export * from './components/display/accordionWithAvatar/AccordionWithAvatar'
 export * from './components/display/answer/Answer'
 export * from './components/display/tab/Tab'
+export * from './components/display/editRow/EditRow'
 
 //FEEDBACK
 export * from './components/feedback/alert/Alert'

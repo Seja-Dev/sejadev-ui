@@ -1,6 +1,10 @@
+export type BadgeVariant = 'primary' | 'secondary' | 'accent' | 'neutral' | 'ghost'
+
+export type BadgeSize = 'xs' | 'sm' | 'md' | 'lg'
+
 interface BadgeProps {
-  size?: 'xs' | 'sm' | 'md' | 'lg'
-  variant?: 'primary' | 'secondary' | 'accent' | 'neutral' | 'ghost'
+  size?: BadgeSize
+  variant?: BadgeVariant
   className?: string
   skeleton?: boolean
   skeletonClassName?: string
