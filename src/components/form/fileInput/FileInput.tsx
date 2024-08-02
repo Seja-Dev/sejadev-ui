@@ -35,8 +35,8 @@ export const FileInput = ({
           className="px-4 uppercase font-bold rounded-sm">
           Escolher arquivo
         </button>
-        <div className="h-12 w-56 bg-common-black p-4 text-sm flex items-center justify-center">
-          {fileName}
+        <div className="h-12 w-56 bg-common-black p-4 text-sm flex items-center justify-center overflow-hidden">
+          <p className="truncate">{fileName}</p>
         </div>
       </div>
       <p>{fileSize}</p>
