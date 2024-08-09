@@ -28,6 +28,7 @@ export * from './components/feedback/alert/Alert'
 export * from './components/form/input/Input'
 export * from './components/form/textarea/Textarea'
 export * from './components/form/textareaWithButton/TextareaWithButton'
+export * from './components/form/fileInput/FileInput'
 
 //LESSONLIST
 export * from './components/LessonList/chapter/Chapter'
