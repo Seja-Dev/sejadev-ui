@@ -19,7 +19,7 @@ export const Default: Story = {
     image: urlImg,
     title: 'Método Crescimento Exponencial',
     description:
-      'Aprenda as bases da programação e ...Aprenda as bases da programação e ...Aprenda as bases da programação e ...',
+      'Aprenda as bases da programação e Aprenda as bases da programação e Aprenda as bases da programação Aprenda as bases da programação e Aprenda as bases da programação e Aprenda as bases da programação Aprenda as bases da programação e Aprenda as bases da programação e Aprenda as bases da programação',
     buttonIcon: <PiSignIn size={24} />,
     buttonText: 'Acessar',
     status: 'default',
@@ -62,7 +62,7 @@ export const AdminCardDraft: Story = {
     image: urlImg,
     title: 'Método Crescimento Exponencial',
     description:
-      'Aprenda as bases da programação e ...Aprenda as bases da programação e ...Aprenda as bases da programação e ...',
+      'Aprenda as bases da programação e Aprenda as bases da programação e Aprenda as bases da programação e ',
     buttonIcon: <FaGear size={24} />,
     buttonText: 'Administrar',
     badgeText: 'Em rascunho',
@@ -71,6 +71,17 @@ export const AdminCardDraft: Story = {
     badgeSize: 'md',
     status: 'default',
     onClick: () => alert('Administrar clicado')
+  }
+}
+
+export const CardWithoutDescription: Story = {
+  args: {
+    image: urlImg,
+    title: 'Método',
+    buttonIcon: <PiSignIn size={24} />,
+    buttonText: 'Acessar',
+    status: 'default',
+    onClick: () => alert('Acessar clicado')
   }
 }
 
