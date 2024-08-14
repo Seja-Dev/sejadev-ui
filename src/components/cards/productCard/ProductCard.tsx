@@ -75,16 +75,20 @@ export function ProductCard({
           </div>
         )}
       </div>
-      <div className="flex mt-1 flex-col items-center px-2 sm:px-0 sm:gap-2 bg-common-dark20 max-w-[300px]">
-        <h3 className="text-xl text-center font-bold">{title}</h3>
-        <div className="text-common-white">
-          {badgeText && (
-            <Badge variant={badgeVariant} size={badgeSize} className={badgeClassName}>
-              {badgeText}
-            </Badge>
-          )}
+      <div className="flex flex-col justify-between flex-1 px-2 pb-4 sm:px-0 bg-common-dark20 max-w-[300px] w-full">
+        <div className="flex flex-col items-center sm:gap-2">
+          <h3 className="text-xl text-center font-bold">{title}</h3>
+          <div className="text-common-white">
+            {badgeText && (
+              <Badge variant={badgeVariant} size={badgeSize} className={badgeClassName}>
+                {badgeText}
+              </Badge>
+            )}
+          </div>
+          <div className={`text-sm text-center w-full ${containerClass}`}>
+            <div className="line-clamp-3">{description}</div>
+          </div>
         </div>
-        <p className={`text-sm text-center ${containerClass}`}>{description}</p>
         <div className="w-full">
           <Button
             onClick={onClick}
