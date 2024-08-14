@@ -4,6 +4,7 @@ import { Badge } from '../badge/Badge'
 export interface IAnswer {
   userProfile?: string
   name?: string
+  avatarClassName?: string
   createdAt?: string
   children?: React.ReactNode
   isTeam?: boolean
@@ -15,6 +16,7 @@ export interface IAnswer {
 export function Answer({
   userProfile,
   name,
+  avatarClassName,
   createdAt,
   children,
   isTeam,
@@ -45,9 +47,9 @@ export function Answer({
         <div className="flex gap-4 items-center text-common-white">
           <div>
             <Avatar
-              className={`bg-primary text-xl ${isTeam ? 'border-2 border-yellow-400' : ''} w-11 h-11`}
+              className={`text-xl ${isTeam ? 'border-2 border-yellow-400' : ''} w-11 h-11 ${avatarClassName}`}
               text={name}
-              src={`${isTeam ? '' : userProfile}`}
+              src={userProfile}
             />
           </div>
           <div className="flex flex-col">
