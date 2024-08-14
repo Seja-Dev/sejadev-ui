@@ -12,6 +12,7 @@ export interface IAccordionWithAvatar {
   transparent?: boolean
   skeleton?: boolean
   className?: string
+  avatarClassName?: string
   skeletonClassName?: string
   onStateChange?: (open: boolean) => void
   fullWidth?: boolean
@@ -29,6 +30,7 @@ export function AccordionWithAvatar({
   skeletonClassName,
   onStateChange,
   className,
+  avatarClassName,
   fullWidth
 }: IAccordionWithAvatar) {
   const [open, setOpen] = useState(disabled ? false : firstState)
@@ -46,7 +48,7 @@ export function AccordionWithAvatar({
   return (
     <div className="relative">
       <Avatar
-        className="!absolute -left-3 -top-1 w-11 h-11 bg-primary text-xl text-white font-bold"
+        className={`!absolute -left-3 -top-1 w-11 h-11 text-xl text-white font-bold ${avatarClassName}`}
         src={userProfile}
         text={name}
       />
