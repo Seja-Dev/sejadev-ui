@@ -45,9 +45,9 @@ export function Answer({
         <div className="flex gap-4 items-center text-common-white">
           <div>
             <Avatar
-              className={`bg-primary text-xl ${isTeam ? 'border-2 border-yellow-400' : ''} w-11 h-11`}
+              className={`text-xl bg-primary ${isTeam ? 'border-2 border-yellow-400' : ''} w-11 h-11`}
               text={name}
-              src={`${isTeam ? '' : userProfile}`}
+              src={userProfile}
             />
           </div>
           <div className="flex flex-col">

@@ -46,7 +46,7 @@ export function AccordionWithAvatar({
   return (
     <div className="relative">
       <Avatar
-        className="!absolute -left-3 -top-1 w-11 h-11 bg-primary text-xl text-white font-bold"
+        className="!absolute -left-3 -top-1 bg-primary w-11 h-11 text-xl text-white font-bold"
         src={userProfile}
         text={name}
       />
