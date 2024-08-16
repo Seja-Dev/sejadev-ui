@@ -12,7 +12,6 @@ type Story = StoryObj<typeof Answer>
 export const AnswerTeam: Story = {
   args: {
     name: 'IsTeam',
-    avatarClassName: 'bg-primary',
     children:
       'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s',
     createdAt: new Date().toISOString(),
@@ -25,7 +24,6 @@ export const AnswerTeamWithImage: Story = {
   args: {
     userProfile: 'https://cdn-icons-png.flaticon.com/512/3135/3135768.png',
     name: 'IsTeam',
-    avatarClassName: 'bg-primary',
     children:
       'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s',
     createdAt: new Date().toISOString(),
@@ -37,7 +35,6 @@ export const AnswerTeamWithImage: Story = {
 export const AnswerUser: Story = {
   args: {
     name: 'student',
-    avatarClassName: 'bg-primary',
     children:
       'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s',
     createdAt: new Date().toISOString(),

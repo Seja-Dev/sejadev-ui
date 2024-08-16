@@ -36,7 +36,7 @@ export function Avatar({
       onClick={onClick}>
       <div
         style={{ backgroundImage: `url(${src})` }}
-        className={`w-full h-full bg-cover bg-center rounded-full flex items-center justify-center ${imageClassName}`}>
+        className={`w-full h-full bg-cover bg-center flex items-center justify-center ${imageClassName}`}>
         {!src && name}
       </div>
       <div
