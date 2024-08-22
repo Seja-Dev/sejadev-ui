@@ -7,7 +7,6 @@ interface IModalWithButton {
   children: ReactNode
   skeleton?: boolean
   skeletonClassName?: string
-  btnContainerClassName?: string
   className?: string
   confirmButtonText?: string
   onConfirm?: () => void
@@ -18,7 +17,6 @@ export function ModalWithButton({
   children,
   skeleton,
   skeletonClassName,
-  btnContainerClassName,
   className,
   confirmButtonText,
   onConfirm
@@ -32,18 +30,18 @@ export function ModalWithButton({
   }
 
   return (
-    <>
-      <Button onClick={() => setIsOpen(true)}>{buttonText}</Button>
-      <Modal isOpen={isOpen} onClose={() => setIsOpen(false)} className={className}>
+    <div className={`${className}`}>
+      <Button fullWidth onClick={() => setIsOpen(true)}>
+        {buttonText}
+      </Button>
+      <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
         {children}
         {confirmButtonText && (
-          <div className={`${btnContainerClassName}`}>
-            <Button onClick={handleCloseModal} fullWidth>
-              {confirmButtonText}
-            </Button>
-          </div>
+          <Button onClick={handleCloseModal} fullWidth>
+            {confirmButtonText}
+          </Button>
         )}
       </Modal>
-    </>
+    </div>
   )
 }
