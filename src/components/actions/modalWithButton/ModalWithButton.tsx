@@ -24,9 +24,9 @@ export function ModalWithButton({
   const [isOpen, setIsOpen] = useState(false)
   if (skeleton) return <div className={`skeleton w-32 h-12 rounded-lg ${skeletonClassName}`}></div>
 
-  const handleCloseModal = () => {
-    setIsOpen(false)
+  const handleConfirm = () => {
     onConfirm && onConfirm()
+    setIsOpen(false)
   }
 
   return (
@@ -37,7 +37,7 @@ export function ModalWithButton({
       <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
         {children}
         {confirmButtonText && (
-          <Button onClick={handleCloseModal} fullWidth>
+          <Button onClick={handleConfirm} fullWidth>
             {confirmButtonText}
           </Button>
         )}
