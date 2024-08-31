@@ -3,7 +3,6 @@ import { Badge, BadgeVariant } from '../../display/badge/Badge'
 interface ICourseCard {
   title: string
   description?: string
-  url: string
   level: number
   tags?: string[]
   skeleton?: boolean
