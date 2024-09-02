@@ -12,6 +12,7 @@ type Story = StoryObj<typeof CourseCard>
 export const Basic: Story = {
   args: {
     title: 'A Jornada Fullstack - básico',
+    badgeVariant: 'primary',
     description: ''
   }
 }
