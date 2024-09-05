@@ -28,11 +28,14 @@ export function Pagination({ currentPage, totalPages, onChange }: IPagination) {
 
   return (
     <div className="join">
-      <button className="btn join-item text-lg" onClick={() => onChange(1)} disabled={isFirstPage}>
+      <button
+        className="btn join-item text-base"
+        onClick={() => onChange(1)}
+        disabled={isFirstPage}>
         &lt;&lt;
       </button>
       <button
-        className="btn join-item text-lg"
+        className="btn join-item text-base"
         onClick={() => onChange(currentPage - 1)}
         disabled={isFirstPage}>
         &lt;
@@ -41,20 +44,20 @@ export function Pagination({ currentPage, totalPages, onChange }: IPagination) {
         return (
           <button
             key={page}
-            className={`join-item btn text-lg ${page === currentPage ? 'btn-active' : ''}`}
+            className={`join-item btn text-base ${page === currentPage ? 'btn-active' : ''}`}
             onClick={() => onChange(page)}>
             {page}
           </button>
         )
       })}
       <button
-        className="btn join-item text-lg"
+        className="btn join-item text-base"
         onClick={() => onChange(currentPage + 1)}
         disabled={isLastPage}>
         &gt;
       </button>
       <button
-        className="btn join-item text-lg"
+        className="btn join-item text-base"
         onClick={() => onChange(totalPages)}
         disabled={isLastPage}>
         &gt;&gt;
