@@ -4,6 +4,7 @@ export * from './components/actions/dropdown/Dropdown'
 export * from './components/actions/modal/Modal'
 export * from './components/actions/modalWithButton/ModalWithButton'
 export * from './components/actions/confirmationModal/ConfirmationModal'
+export * from './components/actions/pagination/Pagination'
 
 //CARDS
 export * from './components/cards/courseCard/CourseCard'
